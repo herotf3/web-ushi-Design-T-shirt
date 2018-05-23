@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin | Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap v4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="js/script.js"></script>
+
+    <!--Google Charts-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10" style="margin-left: 10px">
+                    <img src="imgs/logo.png" alt="" width="180">
+                </div>
+                <div class="dropdown" style="margin: auto">
+                    <img src="imgs/admin.png" alt="" width="50px">
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="btn-admin">Admin
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">Tài khoản</a>
+                        <a class="dropdown-item" href="#">Cài đặt trang</a>
+                        <hr width="80%">
+                        <a class="dropdown-item" href="#">Đăng xuất</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Our bottom contents -->
+    <section id="left-bar" class="container-fluid">
+        <div class="row">
+
+            <!-- Left navigationbar -->
+            <div class="col-md-2">
+                <div class="list-group">
+                    <br>
+                    <a href="#" class="nav-item" id="thongke">
+                        <p style="display: inline">Thống kê</p>
+                    </a>
+                    <a href="#" class="nav-item" id="nguoidung">
+                        <p style="display: inline">Quản lí users</p>
+                        <span class="badge">120</span>
+                    </a>
+                    <a href="#" class="nav-item" id="donhang">
+                        <p style="display: inline">Đơn hàng</p>
+                        <span class="badge">53</span>
+                    </a>
+                    <a href="#" class="nav-item" id="sanpham">
+                        <p style="display: inline">Sản phẩm</p>
+
+                        <span class="badge">46</span>
+                    </a>
+
+                    <a href="#" class="nav-item" id="khohang">
+                        <p style="display: inline">Kho hàng</p>
+                        <span class="badge">12</span>
+                    </a>
+                    <a class="nav-item">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr style="background: whitesmoke">
+                    </a>
+                    <a href="#" class="nav-item" id="giaodien">
+                        <p style="display: inline">Giao diện</p>
+                    </a>
+                    <a href="#" class="nav-item" id="ngonngu">
+                        <p style="display: inline">Ngôn ngữ</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Our switchable content -->
+            <div class="col-md-9" style="margin: 0 auto">
+                <div class="main">
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+</body>
+
+</html>

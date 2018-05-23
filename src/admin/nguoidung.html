@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 10px 20px 12px 30px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+        input[type=text]:focus {
+            width: 50%;
+        }
+
+        table {
+            font-weight: Bình thường;
+            border-collapse: collapse;
+            width: 100%;
+            background-color: white;
+            font-size: 14px;
+        }
+
+        td,
+        th {
+
+            text-align: left;
+            padding: 20px 8px;
+        }
+
+        .box-title {
+            background: white;
+            width: auto;
+            margin-bottom: 20px;
+            padding: 20px 20px;
+            box-shadow: 0px 0px 10px -1px rgba(20, 40, 100, 0.55);
+        }
+
+        .box-title p {
+            margin: auto;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1A4279;
+        }
+
+
+        .pagination {
+
+            margin-top: 50px;
+        }
+
+        .container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Hide the browser's default checkbox */
+
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* Create a custom checkbox */
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: rgb(201, 199, 199);
+        }
+
+        /* On mouse-over, add a grey background color */
+
+        .container:hover input~.checkmark {
+            background-color: rgb(147, 198, 247);
+        }
+
+        /* When the checkbox is checked, add a blue background */
+
+        .container input:checked~.checkmark {
+            background-color: #2196F3;
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+
+        .container input:checked~.checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+
+        .container .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box-title">
+        <p>Quản lí users</p>
+    </div>
+
+    <div class="searchbar" style="text-align: center; margin-top: 50px">
+        <p style="font-weight: bold">Tìm kiếm users</p>
+        <form>
+            <input type="text" name="search" placeholder="Search ...">
+        </form>
+    </div>
+
+    <hr>
+
+    <div class="sort">
+        <p style="font-weight: bold">Sắp xếp theo:</p>
+
+        <div class="row" style="margin-bottom: 30px; margin-left: 0px ">
+
+            <select name="action" style="border-radius: 5px">
+                <option value="none">Tên người dùng</option>
+                <option value="guava">Hạng</option>
+                <option value="guava">Ngày gia nhập</option>
+                <option value="guava">Tình trạng</option>
+            </select>
+
+            <button style="margin-left: 20px; background: whitesmoke; border-radius: 5px">Áp dụng</button>
+
+        </div>
+    </div>
+
+
+    <table>
+        <tr>
+            <th>
+                <label class="container">
+                    <input type="checkbox">
+
+                </label>
+            </th>
+            <th>
+                <a href="#">Người dùng</a>
+            </th>
+            <th>
+                <a href="#">Ảnh</a>
+            </th>
+            <th>
+                <a href="#">Ngày gia nhập</a>
+            </th>
+            <th>
+                <a href="#">Hạng</a>
+            </th>
+            <th>
+                <a href="#">
+                    Online lần cuối
+                </a>
+            </th>
+            <th>
+                <a href="#">Tình trạng</a>
+            </th>
+            <th>
+                <a href="#">Hàng đã mua</a>
+            </th>
+            <th>
+                <a href="#">Kho thiết kế</a>
+            </th>
+            <th>
+                <a href="#">Thiết lập</a>
+            </th>
+        </tr>
+
+        <tr>
+            <td>
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </td>
+            <td>1010501</td>
+            <td>
+                <a href=""></a>
+                <img src="imgs/user.png" alt="" height="40px">
+            </td>
+            <td>22/2/2018</td>
+            <td>
+                <a href="#"> A1 </a>
+            </td>
+            <td>2 tiếng trước</td>
+            <td>Bình thường</td>
+            <td style="font-style: italic" class="user_khohang">
+                <a href="#">Lịch sử</a>
+            </td>
+            <td style="font-style: italic" class="user_thietke">
+                <a href="#">Xem kho</a>
+            </td>
+            <td>
+                <a href="#">
+                    <img src="imgs/xem.png" alt="" width="18px">
+                </a>
+                <p style="display:inline">/</p>
+                <a href="#">
+                    <img src="imgs/sua.png" alt="" width="14px">
+                </a>
+                <p style="display:inline">/</p>
+                <a href="#">
+                    <img src="imgs/xoa.png" alt="" width="14px">
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </td>
+            <td>1010502</td>
+            <td>
+                <img src="imgs/user.png" alt="" height="40px">
+            </td>
+            <td>20/3/2018</td>
+            <td>
+                <a href="#"> A1 </a>
+            </td>
+            <td>5 tiếng trước</td>
+            <td style="font-style: italic">Bị khóa</td>
+            <td style="font-style: italic" class="user_khohang">
+                <a href="#">Lịch sử</a>
+            </td>
+            <td style="font-style: italic" class="user_thietke">
+                <a href="#">Xem kho</a>
+            </td>
+            <td>
+                <a href="#">
+                    <img src="imgs/xem.png" alt="" width="18px">
+                </a>
+                <p style="display:inline">/</p>
+                <a href="#">
+                    <img src="imgs/sua.png" alt="" width="14px">
+                </a>
+                <p style="display:inline">/</p>
+                <a href="#">
+                    <img src="imgs/xoa.png" alt="" width="14px">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </td>
+            <td>1010503</td>
+            <td>
+                <img src="imgs/user.png" alt="" height="40px">
+            </td>
+            <td>12/1/2018</td>
+            <td>
+                <a href="#"> A1 </a>
+            </td>
+            <td>1 tiếng trước</td>
+            <td>Bình thường</td>
+            <td style="font-style: italic" class="user_khohang">
+                <a href="#">Lịch sử</a>
+            </td>
+            <td style="font-style: italic" class="user_thietke">
+                <a href="#">Xem kho</a>
+            </td>
+            <td>
+                <a href="#">
+                    <img src="imgs/xem.png" alt="" width="18px">
+                </a>
+                <p style="display:inline">/</p>
+                <a href="#">
+                    <img src="imgs/sua.png" alt="" width="14px">
+                </a>
+                <p style="display:inline">/</p>
+                <a href="#">
+                    <img src="imgs/xoa.png" alt="" width="14px">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </td>
+            <td>1010504</td>
+            <td>
+                <img src="imgs/user.png" alt="" height="40px">
+            </td>
+            <td>1/1/2018</td>
+            <td>
+                <a href="#"> A1 </a>
+            </td>
+            <td>2 tiếng trước</td>
+            <td>Bình thường</td>
+            <td style="font-style: italic" class="user_khohang">
+                <a href="#">Lịch sử</a>
+            </td>
+            <td style="font-style: italic" class="user_thietke">
+                <a href="#">Xem kho</a>
+            </td>
+            <td>
+                <a href="#">
+                    <img src="imgs/xem.png" alt="" width="18px">
+                </a>
+                <p style="display:inline">/</p>
+                <a href="#">
+                    <img src="imgs/sua.png" alt="" width="14px">
+                </a>
+                <p style="display:inline">/</p>
+                <a href="#">
+                    <img src="imgs/xoa.png" alt="" width="14px">
+                </a>
+            </td>
+        </tr>
+
+    </table>
+
+    <div class="d-flex"></div>
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a class="page-link" href="#">Previous</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+.when16 {
+  background: #646464 !important;
+}
+
+.color-primary{
+  color:#f45b69 !important;
+}
+.color-second{
+  color:#1A4279 !important;
+}
+
+body {
+  background: whitesmoke;
+}
+
+#header{
+  background: white;
+
+  box-shadow: 0 8px 6px -6px #777;
+}
+
+.list-group {
+  padding: 20px;
+  background: #474747;
+  margin-left: -20px;
+  box-shadow: 5px 0px 6px -2px #777;
+  padding-bottom: 30px;
+  height: 110%;
+}
+
+.nav-item {
+  margin-left: 20px;
+  padding-top: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-item:hover{
+  color: #f45b69;
+}
+
+.badge {
+  color: #f45b69;
+}
+
+#btn-admin {
+  background: white;
+  color: black;
+  border: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.main {
+  margin-top: 40px;
+}

@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+}
+
+#wrapper {
+    max-width: 1140px;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+}
+
+/*layout-left*/
+
+#layout-left {
+    width: 26%;
+    float: left;
+}
+
+#left-content {
+    border-radius: 5px;
+}
+
+#tag {
+    background-color: white;
+    width: 100%;
+    height: 34.467px;
+}
+
+.button-layout-left {
+    width: 49%;
+    margin: 0;
+    border: none;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    background-color: rgb(175, 175, 175); 
+}
+
+.btn-left-left {
+    float: left;
+    
+}
+
+.btn-left-right {
+    float: right;
+}
+
+.btn-choose {
+    background-color: rgb(238, 238, 238);
+}
+
+#left-content-content {
+    background-color: rgb(238, 238, 238);
+    padding: 20px;
+}
+
+#content-mau {
+    text-align: center;
+}
+
+.btn-mau {
+    width: 80%;
+}
+
+/*layout-center*/
+
+#layout-center {
+    float: left;
+    width: 49%;
+    text-align: center;
+}
+
+.img-center {
+    width: 95%;
+    padding: 5px;
+    padding-bottom: 20px;
+}
+
+.btn-center {
+    width: 30%;
+}
+
+/*layout-right*/
+#layout-right {
+    float: left;
+    width: 30%;
+}
+
+.right-left {
+    width: 20%;
+    float: left;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.right-left-content {
+    width: 80%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+    border: solid 1px #cccc;
+    box-shadow: 0 0 2px 0 #cccc;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px 5px;
+    margin-top: 20vh;
+}
+
+.box-color {
+    width: 22px;
+    height: 22px;
+    margin: 0 7px 7px 0;
+    border: 2px solid #cccc;
+}
+
+.right-right {
+    width: 80%;
+    float: right;
+}
+
+.right-right-content {
+    margin: 0;
+    background-color: rgb(243, 245, 246);
+    border: 1px solid rgb(195, 195, 195);
+    border-radius: 5px;
+}
+
+.kieu-dang {
+    margin: 10px;
+}
+
+.choose-size {
+    border: 1px solid rgb(195, 195, 195);
+    margin: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: white;
+    padding: 1rem;
+}
+
+.choose-size h1 {
+    font-size: 18px;
+}
+
+.choose-size img {
+    width: 25%;
+}
+
+.choose-size a {
+    text-decoration: none;
+    color: black;
+}
+
+.choose-size p {
+    font-size: 16px;
+    line-height: 1em;
+}
+
+.choosed {
+    background-color: rgb(225, 243, 251);
+    display: block;
+    border: 1px solid rgb(195, 195, 195);
+    border-radius: 1px;
+}
+
+.price {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.price p {
+    color: grey;
+}
+
+.price h1 {
+    color: rgb(40, 120, 161);
+}
+
+.btn-right {
+    margin: 10px;
+    text-align: center;
+}
+
+.btn-right-content {
+    width: 100%;
+}
+
+/*editor zone*/
+
+.editor-container {
+    position: relative;
+    width: 530;
+    height: 630;
+}
+
+div.productColor {
+    transition: background-color 0.4s ease;
+}
+
+div.productColor,
+img.ghost-image {
+    position: absolute;
+    width: 100%;
+    height: 630px;
+    box-sizing: content-box;
+    top: 0;
+    left: 0;
+}
+
+img.ghost-image {
+    background-size: 530px 630px !important;
+    pointer-events: none;
+    max-width: 100%;
+}
+
+div.printable-area-box {
+    left: 29%;
+    top: 100px;
+    width: 41%;
+    height: 330px;
+    border-color: rgba(255, 100, 185, 0.692) !important;    
+}
+div.printable-area-box {
+	margin-top: -2px;
+	background: transparent;
+	border-top: 2px solid;
+	border-left: 2px solid;
+	border-right: 2px solid ;
+	border-bottom: 0;
+	color: #fff;
+}
+div.printable-area-box, div.printable-area-toolbar {
+	position: absolute;
+	box-sizing: content-box;
+	margin-left: -2px;
+	transition: all .4s ease;
+}
+div.printable-area-toolbar {
+	font-size: .7em;
+	width: calc(100% + 4px);	
+	bottom: -2em;
+	background-color: rgba(255, 100, 185, 0.692);
+	height: 2em;
+	line-height: 2em;
+}
+/*input color*/
+.form-control{
+    width: 100%;
+    height: 22px;
+    padding: 0;
+}
+.form-control.select-color{
+    width: 30px;
+}

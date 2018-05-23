@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Khách hàng', 'Đơn hàng'],
+                ['Tháng 2', 250, 100],
+                ['Tháng 3', 350, 460],
+                ['Tháng 4', 450, 700],
+                ['Tháng 5', 600, 800],
+                ['Tháng 6', 700, 1000]
+            ]);
+
+            var options = {
+                title: 'THỐNG KÊ DỮ LIỆU QUÝ 1 NĂM 2018',
+                curveType: 'function',
+                legend: { position: 'bottom' },
+                backgroundColor: 'whitesmoke',
+                is3D: true
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
+    <style>
+        .box-title {
+            background: white;
+            width: auto;
+            margin-bottom: 20px;
+            padding: 20px 20px;
+            box-shadow: 0px 0px 10px -1px rgba(20, 40, 100, 0.55);
+        }
+
+        .box-title p {
+            margin: auto;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1A4279;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-title">
+        <p>Thống kê</p>
+    </div>
+
+    <div id="curve_chart" style="width: 1000px; height: 600px;"></div>
+
+</body>
+
+</html>

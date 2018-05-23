@@ -1,0 +1,26 @@
+$(document).ready(function () {
+    $('#thongke').on('click', function () {
+        $('.main').load('components/thongke.html');
+    });
+
+    $('#donhang').on('click', function () {
+        $('.main').load('components/donhang.html');
+    });
+
+    $('#sanpham').on('click', function () {
+        $('.main').load('components/sanpham.html');
+    });
+
+    $('#khohang').on('click', function () {
+        $('.main').load('components/khohang.html');
+    });
+    $('#giaodien').on('click', function () {
+        $('.main').load('components/giaodien.html');
+    });
+
+    $('#ngonngu').on('click', function () {
+        $('.main').load('components/ngonngu.html');
+    });
+});
+
+

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 10px 20px 12px 30px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+        input[type=text]:focus {
+            width: 50%;
+        }
+
+        table {
+            font-weight: normal;
+            border: slateblue;
+            border-collapse: collapse;
+            width: 100%;
+            background-color: white;
+            box-shadow: slategray 10px;
+            font-size: 16px;
+        }
+
+        td,
+        th {
+
+            text-align: left;
+            padding: 20px 8px;
+        }
+
+        .box-title {
+            background: white;
+            width: auto;
+            margin-bottom: 20px;
+            padding: 20px 20px;
+            box-shadow: 0px 0px 10px -1px rgba(20, 40, 100, 0.55);
+        }
+
+        .box-title p {
+            margin: auto;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1A4279;
+        }
+
+
+        .pagination {
+
+            margin-top: 50px;
+        }
+
+        .container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Hide the browser's default checkbox */
+
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* Create a custom checkbox */
+
+        tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box-title">
+        <p>Đơn hàng</p>
+    </div>
+
+    <div class="searchbar" style="text-align: center; margin-top: 50px">
+        <p style="font-weight: bold">Tìm kiếm mã số đơn hàng</p>
+        <form>
+            <input type="text" name="search" placeholder="Search ...">
+        </form>
+    </div>
+
+    <hr>
+    <div class="sort">
+        <p style="font-weight: bold">Sắp xếp theo:</p>
+
+        <div class="row" style="margin-bottom: 30px; margin-left: 0px ">
+
+            <select name="action" style="border-radius: 5px">
+                <option value="none">Mã đơn hàng</option>
+                <option value="guava">Ngày mua</option>
+                <option value="guava">Giá tiền</option>
+                <option value="guava">Trạng thái</option>
+            </select>
+
+            <button style="margin-left: 20px; background: whitesmoke; border-radius: 5px">Áp dụng</div>
+    </div>
+
+    <table>
+        <tr>
+            <th>
+                <a href="#">Đơn hàng #</a>
+            </th>
+            <th>
+                <a href="#">Ngày mua</a>
+            </th>
+            <th>
+                <a href="#">
+                    Gửi đến
+                </a>
+            </th>
+            <th>
+                <a href="#">Tổng tiền</a>
+            </th>
+            <th>
+                <a href="#">Trạng thái đơn hàng</a>
+            </th>
+        </tr>
+
+        <tr>
+            <td>1010501</td>
+            <td>02/02/2018</td>
+            <td>7A Thành Thái, Quận 10, TPHCM</td>
+            <td>200.000</td>
+            <td style="font-style: italic">Đã giao hàng</td>
+        </tr>
+
+        <tr>
+            <td>1010502</td>
+            <td>03/03/2018</td>
+            <td>KTX khu B ĐHQG TPHCM</td>
+            <td>200.000</td>
+            <td style="font-style: italic">Đã giao hàng</td>
+        </tr>
+        <tr>
+            <td>1010503</td>
+            <td>04/04/2018</td>
+            <td>128 Cách mạng tháng 8, Quận 10, TPHCM</td>
+            <td>200.000</td>
+            <td style="font-style: italic">Đã giao hàng</td>
+        </tr>
+        <tr>
+            <td>1010504</td>
+            <td>22/04/2018</td>
+            <td>300 Lê Đại Hành, Quận 11, TPHCM</td>
+            <td>200.000</td>
+            <td style="font-style: italic">Đã giao hàng</td>
+        </tr>
+
+    </table>
+
+    <div class="d-flex"></div>
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a class="page-link" href="#">Previous</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+    </div>
+</body>
+
+</html>

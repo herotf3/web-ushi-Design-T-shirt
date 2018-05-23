@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Fabric tutorial</title>
+        <script src="js/fabric.js"></script>
+    </head>
+    <body>
+        <canvas id="cv" width="800" height="600"></canvas>
+    </body>
+
+    <script>
+        var canvas= new fabric.Canvas('cv');
+        var rect=new fabric.Rect({
+            left:100,
+            top:100,
+            width:80,
+            height:60,
+            fill:'orange',
+            opacity:0.5
+        });
+        canvas.add(rect);
+    </script>
+</html>
