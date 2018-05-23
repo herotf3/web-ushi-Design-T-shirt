@@ -54,6 +54,10 @@ a #logo {
     color: #1a4279;
     font-weight: bold;
 }
+.navbar .navbar-nav>.nav-item>.nav-link.active {
+    color: #1f4d8f;
+    font-weight: bold;
+}
 
 i.fa-user-circle {
     font-size: 30px;

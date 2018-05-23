@@ -15,6 +15,10 @@ function changeColorClick(){
 }
 function undoColor(){
     productColor.css('background-color',oldColor);
+    console.log("set background: "+oldColor);
+    productColor.data('currentcolor',oldColor);
+    console.log("set current color: "+oldColor);
 }
-//$('.color-sample div.box-color').hover(changeColor,productColor);
+$('.color-sample div.box-color').mouseenter(changeColor)
+                                .mouseleave(undoColor);
 $('.color-sample div.box-color').click(changeColorClick);
