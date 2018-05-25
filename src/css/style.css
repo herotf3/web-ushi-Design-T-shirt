@@ -84,6 +84,25 @@ i.fa-user-circle:hover {
     margin-right: 10px;
 }
 
+#signin {
+    text-align: center;
+    color: #1a4279;
+    border: #315e9e 1px solid;
+    border-style: outset;
+    border-radius: 4px;
+    box-sizing: content-box;
+    font-weight: 500;
+}
+
+#signin:hover {
+    text-align: center;
+    background-color: #4c0568;
+    border: #190342 1px solid;
+    box-sizing: content-box;
+    color: whitesmoke;
+    border-radius: 4px;
+}
+
 #login:hover {
     text-align: center;
     background-color: #f45b69;
