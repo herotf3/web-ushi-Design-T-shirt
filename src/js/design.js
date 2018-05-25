@@ -1,5 +1,5 @@
 var oldColor='#fff';
-var productColor=$('#productColor');
+var productColor=$('.productColor');
 function changeColor(){
     var color=$(this).data('color');    //láy màu từ box-color hiện tại
     oldColor=productColor.data('currentcolor');
@@ -22,3 +22,7 @@ function undoColor(){
 $('.color-sample div.box-color').mouseenter(changeColor)
                                 .mouseleave(undoColor);
 $('.color-sample div.box-color').click(changeColorClick);
+//button front / back click to flip the editor
+$('.flip-button').click(function(){
+    $('.flip-container').toggleClass('flip');
+});

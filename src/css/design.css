@@ -65,7 +65,7 @@
 
 #layout-center {
     float: left;
-    width: 49%;
+    width: 50%;
     text-align: center;
 }
 
@@ -189,10 +189,74 @@
 
 .editor-container {
     position: relative;
-    width: 530;
-    height: 630;
+    width: 530px;
+    height: 630px;
+    margin: 0 auto;
+    perspective:2000px ;
+    transform: translateY(0);
+    transition: transform .4s ease;
+}
+.new-editor{
+    text-align: left;
+    width: 530px;
+    height: 630px;
+    background: #fff;
+    transition: transform .4s ease;
+    box-sizing: content-box;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.front{
+    z-index: 2;
+}
+.flip-container{
+    position: absolute;
+    width: 530px;
+    height: 630px;    
+    transition: transform .6s;
+    transform-style: preserve-3d;
+}
+.flip-container.flip .front{
+    transform: rotateY(180deg);
+}
+.flip-container.flip .back{
+    transform: rotateY(0deg);
+}
+.flip-container .back{
+    transform: rotateY(-180deg);
 }
 
+.flip-buttons{
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;        
+    font-size: .8rem;
+    font-weight: 600;
+}
+.flip-button{
+    padding: .5rem 1.4rem;
+    line-height: 1.4rem;
+    border: 1px solid #6c7478;
+    background: #fff;
+    color: #6c7478;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.flip-button-active{
+    background: #6c7478;
+    color: #fff;
+}
+.flip-button-front{
+    border-radius: 5px 0 0 5px;
+}
+.flip-button-back{
+    border-radius: 0 5px 5px 0;
+    margin-left:-4px;
+}
 div.productColor {
     transition: background-color 0.4s ease;
 }
@@ -212,13 +276,12 @@ img.ghost-image {
     pointer-events: none;
     max-width: 100%;
 }
-
 div.printable-area-box {
-    left: 29%;
-    top: 100px;
-    width: 41%;
-    height: 330px;
-    border-color: rgba(255, 100, 185, 0.692) !important;    
+	left: 28.9%;
+	top: 100px;
+	width: 41.3%;
+	height: 360px;
+	border-color: rgba(255, 100, 185, 0.534) !important;
 }
 div.printable-area-box {
 	margin-top: -2px;
@@ -241,7 +304,8 @@ div.printable-area-toolbar {
 	bottom: -2em;
 	background-color: rgba(255, 100, 185, 0.692);
 	height: 2em;
-	line-height: 2em;
+    line-height: 2em;
+    padding-left: 5px;
 }
 /*input color*/
 .form-control{

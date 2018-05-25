@@ -530,3 +530,7 @@ a.item_remove_button{
     margin: 1.75rem auto;
     font-size:16px;
 }
+.no-select{
+    user-select: none;
+    pointer-events: none;
+}
