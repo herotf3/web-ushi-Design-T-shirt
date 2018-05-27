@@ -599,3 +599,6 @@ a.item_remove_button{
 .panel-order .panel-deading {
 	margin-bottom: 0;
 }             
+.orderDetailTotal{
+    float: right;
+}

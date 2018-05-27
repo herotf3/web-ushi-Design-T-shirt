@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lịch sử mua hàng</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/flags.min.css">
+    <link rel="stylesheet" href="../css/shop.css">
+    <link rel="stylesheet" href="../css/page.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="bg-white">
+            <nav class="navbar navbar-expand-sm bg-nav navbar-light font-weight-bold pl-3">
+                <a class="navbar-brand" href="#">
+                    <img id="logo" src="../img/logo ushi.png" alt="Ushi - Thời trang của bạn">
+                </a>
+                <ul class="navbar-nav ml-auto mr-2">
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="../home/index.html">Trang chủ</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="../design-page/design.html">Trang thiết kế</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="../shop/myshop.html">Shop</a>
+                    </li>
+                    <li class="nav-item px-2 cart-menu">
+                        <a class="nav-link" href="../shop/cart.html">Giỏ hàng</a>
+                    </li>
+                    <li class="nav-item px-2 my-auto">
+                        <a class="nav-link " href="#" id="signin" data-toggle="modal" data-target="#signUpModal">Đăng kí </a>
+                    </li>
+                    <li class="nav-item px-2 my-auto">
+                        <a class="nav-link" href="#" id="login" data-toggle="modal" data-target="#logInModal">Đăng nhập </a>
+                    </li>
+                    <li class="nav-item px-2 user-menu">
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="fa fa-user-circle-o user-menu-icon" aria-hidden="true" id="user-menu-icon"></i> ThienTF
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                <h6 class="dropdown-header">Chào ThienTF</h6>
+                                <a class="dropdown-item" href="#">Thông tin</a>
+                                <a class="dropdown-item" href="#">Yêu thích</a>
+                                <a class="dropdown-item" href="../user/history.html">Lịch sử mua</a>
+                                <div class="dropdown-divider"></div>
+                                <h6 class="dropdown-header">
+                                    <i class="fa fa-cog" aria-hidden="true"></i> Thiết lập</h6>
+                                <a class="dropdown-item" href="#">Đổi mật khẩu</a>
+                                <a class="dropdown-item" href="#">Đăng xuất</a>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </nav>
+        </header>
+        <div class="head-image shop-head-image">
+            <div class="head-page-content">
+                <h2 class="title-page py-auto">Lịch sử mua hàng</h2>
+            </div>
+        </div>
+        <div class="container mt-3">
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+            <br>
+            <div class="row">
+                <div class="table-responsive">
+                    <table  class="table table-bordered">
+                        <thead class="bg-secondary text-white">
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Số lượng áo</th>
+                                <th>Địa chỉ giao</th>
+                                <th>Ngày đặt</th>
+                                <th>Số tiền</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTable">
+                            <tr>
+                                <td>
+                                    <a href="" data-toggle="modal" data-target="#modalOrderDetail">3d4555122</a>
+                                </td>
+                                <td>3</td>
+                                <td>414 Dương Bá Trạc, q8, p1, tp HCM</td>
+                                <td>11/6/2018</td>
+                                <td>500,000đ</td>
+                                <td>
+                                    <span class="badge badge-warning">Đang chờ</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="" data-toggle="modal" data-target="#modalOrderDetail">3d4378122</a>
+                                </td>
+                                <td>3</td>
+                                <td>414 Dương Bá Trạc, q8, p1, tp HCM</td>
+                                <td>11/6/2018</td>
+                                <td>500,000đ</td>
+                                <td>
+                                    <span class="badge badge-success">Đã giao</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="" data-toggle="modal" data-target="#modalOrderDetail">3d4515122</a>
+                                </td>
+                                <td>3</td>
+                                <td>414 Dương Bá Trạc, q8, p1, tp HCM</td>
+                                <td>20/12/2014</td>
+                                <td>500,000đ</td>
+                                <td>
+                                    <span class="badge badge-warning">Đang chờ</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="" data-toggle="modal" data-target="#modalOrderDetail">3d4553456</a>
+                                </td>
+                                <td>3</td>
+                                <td>414 Dương Bá Trạc, q8, p1, tp HCM</td>
+                                <td>31/3/2018</td>
+                                <td>500,000đ</td>
+                                <td>
+                                    <span class="badge badge-primary">Đã in</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="" data-toggle="modal" data-target="#modalOrderDetail">3d4553456</a>
+                                </td>
+                                <td>3</td>
+                                <td>414 Dương Bá Trạc, q8, p1, tp HCM</td>
+                                <td>31/3/2018</td>
+                                <td>500,000đ</td>
+                                <td>
+                                    <span class="badge badge-success">Đã giao</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="footer row mt-5">
+                <div class="logo-footer col-2 pt-4"></div>
+                <div class="col-7 text-left pt-4 my-auto">
+                    <div class="row">
+                        <a href="#" class="foot-link mx-3 px-3">Giới thiệu</a>
+                        <a href="#" class="foot-link mx-3 px-3">Blog</a>
+                        <a href="#" class="foot-link mx-3 px-3">Hỗ trợ</a>
+                        <a href="#" class="foot-link mx-3 px-3">Điều khoản</a>
+                        <a href="#" class="foot-link mx-3 px-3">Liên hệ</a>
+                    </div>
+                    <div class="copyright mt-3 mx-3">&copy;2018 Ushi Inc.</div>
+                </div>
+                <div class="col-2 my-auto">
+                    <select class="selectpicker" data-width="fit">
+                        <option data-content='<span class="flag flag-vn"></span>'>Tiếng Việt</option>
+                        <option data-content='<span class="flag flag-us"></span>'>US</option>                        
+                    </select>
+                    <div class="social">
+                        <ul class="social-icons">
+                            <li class="pr-2">
+                                <a href="" class="social-icon">
+                                    <i class="fa fa-facebook"></i>
+                            </li>
+                            <li class="pr-2">
+                                <a href="" class="social-icon">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="pr-2">
+                                <a href="" class="social-icon">
+                                    <i class="fa fa-youtube"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+
+    <!--modal detail-->
+    <div class="modal fade" id="modalOrderDetail" tabindex="-1" role="dialog" aria-labelledby="modalCenter" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title color-second" id="modalLongTitle">Chi tiết đơn hàng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div>
+                    <div class="cart_item">
+                        <div class="cart-line">
+                            <div class="cart-line-top">
+                                <div class="cart-line-thumbnail">
+                                    <a href="#">
+                                        <img src="../img/shirt/dubcat.jpg" alt="dead1" class="pull-left">
+                                    </a>
+                                </div>
+                                <div class="cart-line-detail">
+                                    <div class="cart-product-name">Duble Cat</div>
+                                    <div class="cart-product-detail">L - Tím - Tay ngắn </div>
+                                </div>
+                                <div class="cart-line-quantity"> 1 x</div>
+                                <div class="cart-line-price">
+                                    <span>160,000đ</span>
+                                </div>
+                                <div class="cart-line-action">
+                                    <button class="btn cart-btn">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart_item">
+                        <div class="cart-line">
+                            <div class="cart-line-top">
+                                <div class="cart-line-thumbnail">
+                                    <a href="#">
+                                        <img src="../img/shirt/dead1.jpg" alt="dead1" class="pull-left">
+                                    </a>
+                                </div>
+                                <div class="cart-line-detail">
+                                    <div class="cart-product-name">I live inside your face</div>
+                                    <div class="cart-product-detail">M - Đen - Tay ngắn </div>
+                                </div>
+                                <div class="cart-line-quantity"> 1 x</div>
+                                <div class="cart-line-price">
+                                    <span>120,000đ</span>
+                                </div>
+                                <div class="cart-line-action">
+                                    <button class="btn cart-btn">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart_item">
+                        <div class="cart-line">
+                            <div class="cart-line-top">
+                                <div class="cart-line-thumbnail">
+                                    <a href="#">
+                                        <img src="../img/shirt/proud_dad.jpg" alt="dead1" class="pull-left">
+                                    </a>
+                                </div>
+                                <div class="cart-line-detail">
+                                    <div class="cart-product-name">Dady cool</div>
+                                    <div class="cart-product-detail">M - Đen - Tay dài </div>
+                                </div>
+                                <div class="cart-line-quantity"> 1 x</div>
+                                <div class="cart-line-price">
+                                    <span>220,000đ</span>
+                                </div>
+                                <div class="cart-line-action">
+                                    <button class="btn cart-btn">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <h5 class="col-md-9" id="orderDetailTotal">Tổng cộng:
+                        <span class="badge badge-success">500,000đ</span>
+                    </h5>
+                    <button class="btn btn-secondary col-md-3 float-right">Huỷ đơn hàng</button>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <!-- Optional JavaScript -->
+ 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+            $(document).ready(function(){
+              $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#ordersTable tr").filter(function() {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+              });
+            });
+            </script>
+</body>
+
+</html>
