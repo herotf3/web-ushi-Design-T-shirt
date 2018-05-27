@@ -1,23 +1,29 @@
 
 .category-aside{
-    background-color: #fcf7ff;
-    overflow: hidden;
+    background-color: #f0edf2;
+    overflow: auto;
     padding: 20px;
     min-height: 300px;
-    max-height: 200vh;
+    max-height: 150vh;
 }
 .list-categories li{
     list-style: none;
 }
+
 .category a{
-    color: #646464;
+    color: #eeeeee;
     text-decoration: none;
+    background: rgb(28, 22, 107);
+    border-radius: 5px;
+    padding: 3px 6px;
+    font-size: 14px;
 }
 .active a{
-    color: #1A4279;
+    color: #fff;
+    background:  #f45b69;
 }
 .category a:hover,.category a:active{
-    color: #dd0848;
+    background: rgb(61, 22, 107);
     text-decoration: none;
 }
 .category-hot a{        

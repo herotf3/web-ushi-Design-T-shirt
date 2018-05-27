@@ -75,23 +75,19 @@ i.fa-user-circle:hover {
 
 #login {
     text-align: center;
-    color: #1a4279;
-    border: #315e9e 1px solid;
-    border-style: outset;
+    color: #1a4279;    
     border-radius: 4px;
-    box-sizing: content-box;
-    font-weight: 500;
+    box-sizing: content-box;    
     margin-right: 10px;
+    font-weight: 200;
 }
 
 #signin {
     text-align: center;
-    color: #1a4279;
-    border: #315e9e 1px solid;
-    border-style: outset;
+    color: #1a4279;    
     border-radius: 4px;
-    box-sizing: content-box;
-    font-weight: 500;
+    box-sizing: content-box;    
+    font-weight: 200;
 }
 
 #signin:hover {
@@ -110,6 +106,15 @@ i.fa-user-circle:hover {
     box-sizing: content-box;
     color: whitesmoke;
     margin-right: 10px;
+}
+/*user's menu*/
+.user-menu{
+    font-size:20px;
+    margin: auto 0;
+}
+i.fa.user-menu-icon{    
+    color: snow;
+    margin: auto 0;
 }
 
 .homepage_banner_container {
@@ -553,3 +558,44 @@ a.item_remove_button{
     user-select: none;
     pointer-events: none;
 }
+/*User history order*/
+.panel-order .row {
+	border-bottom: 1px solid #ccc;
+}
+.panel-order .row:last-child {
+	border: 0px;
+}
+.panel-order .row .col-md-1  {
+	text-align: center;
+	padding-top: 15px;
+}
+.panel-order .row .col-md-1 img {
+	width: 50px;
+	max-height: 50px;
+}
+.panel-order .row .row {
+	border-bottom: 0;
+}
+.panel-order .row .col-md-11 {
+	border-left: 1px solid #ccc;
+}
+.panel-order .row .row .col-md-12 {
+	padding-top: 7px;
+	padding-bottom: 7px; 
+}
+.panel-order .row .row .col-md-12:last-child {
+	font-size: 11px; 
+	color: #555;  
+	background: #efefef;
+}
+.panel-order .btn-group {
+	margin: 0px;
+	padding: 0px;
+}
+.panel-order .panel-body {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.panel-order .panel-deading {
+	margin-bottom: 0;
+}             

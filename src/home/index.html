@@ -6,13 +6,13 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="img/favicon.png">
+  <link rel="icon" href="../img/favicon.png">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/carousel.css">
-  <link rel="stylesheet" href="css/flags.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/carousel.css">
+  <link rel="stylesheet" href="../css/flags.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -20,30 +20,47 @@
 <body>
   <div class="container-fluid">
     <header class="sticky-top bg-white">
-      <nav class="navbar navbar-expand-sm bg-nav navbar-light font-weight-bold px-5">
+      <nav class="navbar navbar-expand-sm bg-nav navbar-light font-weight-bold pl-3">
         <a class="navbar-brand" href="#">
-          <img id="logo" src="img/logo ushi.png" alt="Ushi - Thời trang của bạn">
+          <img id="logo" src="../img/logo ushi.png" alt="Ushi - Thời trang của bạn">
         </a>
-        <ul class="navbar-nav ml-auto mr-5">
+        <ul class="navbar-nav ml-auto mr-2">
           <li class="nav-item px-2">
-            <a class="nav-link" href="./index.html">Trang chủ</a>
+            <a class="nav-link active" href="../home/index.html">Trang chủ</a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link" href="design-page/design.html">Trang thiết kế</a>
+            <a class="nav-link" href="../design-page/design.html">Trang thiết kế</a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link" href="shop/myshop.html">Shop</a>
+            <a class="nav-link" href="../shop/myshop.html">Shop</a>
           </li>
           <li class="nav-item px-2 cart-menu">
-            <a class="nav-link" href="shop/cart.html">Giỏ hàng</a>
+            <a class="nav-link" href="../shop/cart.html">Giỏ hàng</a>
           </li>
-          <li class="nav-item px-2 user-menu">
-            <a class="nav-link" href="#" id="signin" data-toggle="modal" data-target="#signUpModal">Đăng kí </a>
+          <li class="nav-item px-2 my-auto">
+            <a class="nav-link " href="#" id="signin" data-toggle="modal" data-target="#signUpModal">Đăng kí </a>
           </li>
-          <li class="nav-item px-2 user-menu">
+          <li class="nav-item px-2 my-auto">
             <a class="nav-link" href="#" id="login" data-toggle="modal" data-target="#logInModal">Đăng nhập </a>
           </li>
-
+          <li class="nav-item px-2 user-menu active">            
+              <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-circle-o user-menu-icon" aria-hidden="true" id="user-menu-icon"></i> ThienTF
+                </a>
+              
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                  <h6 class="dropdown-header">Chào ThienTF</h6>
+                  <a class="dropdown-item" href="#">Thông tin</a>
+                  <a class="dropdown-item" href="#">Yêu thích</a>
+                  <a class="dropdown-item" href="#">Lịch sử mua</a>
+                  <div class="dropdown-divider"></div>
+                  <h6 class="dropdown-header"><i class="fa fa-cog" aria-hidden="true"></i> Thiết lập</h6>
+                  <a class="dropdown-item" href="#">Đổi mật khẩu</a>
+                  <a class="dropdown-item" href="#">Đăng xuất</a>
+                </div>
+              </div>
+            </li>
         </ul>
       </nav>
     </header>
@@ -75,9 +92,9 @@
             <span class="color-primary">Ushi</span> sẽ giúp bạn hiện thực nó !</strong>
         </div>
         <div class="encourage-click">
-          <img class="pattern-point2" src="img/pattern/arrow-to-click.png" width="50px" alt=" ">
-          <a class="btn btn-primary text-light">
-            <strong>In áo ngay</strong>
+          <img class="pattern-point2" src="../img/pattern/arrow-to-click.png" width="50px" alt=" ">
+          <a class="btn btn-primary text-light" href="../design-page/design.html">
+            <strong>Triển ngay</strong>
           </a>
         </div>
       </div>
@@ -196,13 +213,13 @@
       </h2>
       <div class="row pb-5">
         <a class="col-4 " href="#">
-          <img class="collect-item" src="img/collection/collection1.jpg" alt="Fashion girl">
+          <img class="collect-item" src="../img/collection/collection1.jpg" alt="Fashion girl">
         </a>
         <a class="col-4 " href="#">
-          <img class="collect-item" src="img/collection/collection2.jpg" alt="Fashion girl">
+          <img class="collect-item" src="../img/collection/collection2.jpg" alt="Fashion girl">
         </a>
         <a class="col-4 " href="#">
-          <img class="collect-item" src="img/collection/collection3.jpg" alt="Fashion girl">
+          <img class="collect-item" src="../img/collection/collection3.jpg" alt="Fashion girl">
         </a>
       </div>
     </div>
@@ -213,7 +230,7 @@
           <div class="row guide-content mt-4">
             <div class="col-6 my-auto">
               <video class="video-guide my-auto" width="100%" controls>
-                <source src="video/How to Create T-Shirt Design for Teespring Campaign.mp4" type="video/mp4">
+                <source src="../video/How to Create T-Shirt Design for Teespring Campaign.mp4" type="video/mp4">
               </video>
             </div>
             <div class="col-6 guide-step">
@@ -231,8 +248,8 @@
               </div>
               <!--after understand, guest willing click design -->
               <div class="encourage-click ml-3">
-                <img class="pattern-point2" src="img/pattern/arrow-to-click.png" width="50px" alt=" ">
-                <a class="btn btn-danger  text-light">
+                <img class="pattern-point2" src="../img/pattern/arrow-to-click.png" width="50px" alt=" ">
+                <a class="btn btn-danger  text-light" href="../design-page/design.html">
                   <strong>Bắt đầu thiết kế</strong>
                 </a>
               </div>
@@ -366,8 +383,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="js/home.js"></script>
-  <script src="js/carousel.js"></script>
+  <script src="../js/home.js"></script>
+  <script src="../js/carousel.js"></script>
 </body>
 
 </html>
