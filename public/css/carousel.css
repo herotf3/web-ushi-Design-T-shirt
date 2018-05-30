@@ -1,0 +1,143 @@
+.shirt {
+  width: 100%;
+  height: 280px;  
+  /*background-image: url("../img/shirt/toxic.jpg");*/
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0 !important;
+  float: left;  
+}
+.shirt-1 {
+  background-image: url("../img/shirt/toxic.jpg");
+}
+.shirt-2 {
+  background-image: url("../img/shirt/softdrink.jpg");
+}
+.shirt-3 {
+  background-image: url("../img/shirt/proud_dad.jpg");
+}
+.shirt-4 {
+  background-image: url("../img/shirt/dubcat.jpg");
+}
+.shirt-5{
+  background-image:url("../img/shirt/3cold.jpg");
+}
+.shirt-6{
+  background-image:url("../img/shirt/cutU.jpg");
+}
+.shirt-7{
+  background-image:url("../img/shirt/dead.jpg");
+}
+.shirt-7-behind{
+  background-image:url("../img/shirt/dead_behind.jpg");
+}
+.shirt-7-pattern{
+  background-image:url("../img/shirt/dead_pattern.jpg");
+}
+.shirt-hover {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-color: rgba(19, 0, 44, 0.788);
+  padding: 30% 30px !important;
+}
+.shirt-hover hr {
+  height: 25px;
+  width: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-color: #ffffff;
+  border: 0;
+}
+.shirt-hover a {
+  color: #ffffff;
+  padding: 2px 22px;
+  line-height: 40px;  
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.shirt-hover a:hover {  
+  animation: linear;
+  text-decoration:unset;
+}
+.shirt-hover .price{
+  color: #777777;
+}
+.shirt:hover .shirt-hover {
+  opacity: 1;
+}
+.shirt:hover .shirt-hover hr {
+  width: 100%;
+  height: 5px;
+}
+/*--------------------------------------------------*/
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+.carousel-inner .carousel-item-right.active,
+.carousel-inner .carousel-item-next {
+  transform: translateX(25%);
+}
+
+.carousel-inner .carousel-item-left.active, 
+.carousel-inner .carousel-item-prev {
+  transform: translateX(-25%);
+}
+  
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left{ 
+  transform: translateX(0);  
+}
+.carousel-hot-control{
+  display: flow-root;  
+  position: unset;  
+  padding: 5vh 0;
+}
+#prev-hot,#next-hot{
+  display: inline;
+  position: unset; 
+  bottom: 0;   
+}
+#prev-hot i.fa,#next-hot i.fa{
+  font-size:24px;
+}
+#indicator{
+  position: unset;  
+  display: inline-flex;  
+}
+.carousel-indicators i.active {
+	color: #f45b69;
+}
+.carousel-indicators i {
+  color: #1a4279;
+  margin: auto 2px;
+}
+.carousel-control-next, .carousel-control-prev {
+	position: unset;
+	/* top: 0; */
+	/* bottom: 0; */	
+	display: inline-block;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 15%;
+	color: #fff;
+	text-align: center;
+	opacity: .5;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "ushi",
+  "version": "1.0.1",
+  "description": "final project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herotf3/web-ushi-Design-T-shirt.git"
+  },
+  "keywords": [
+    "T-shirt",
+    "Design"
+  ],
+  "author": "Tran The Trung Thien - Tong Thien Minh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/herotf3/web-ushi-Design-T-shirt/issues"
+  },
+  "homepage": "https://github.com/herotf3/web-ushi-Design-T-shirt#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-handlebars-paginate": "^1.0.3"
+  }
+}
