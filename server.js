@@ -20,8 +20,18 @@ app.set('view engine', 'hbs');
 
 
 //Define routes
+//sync code with database
+var models=require('./models');
+app.get('/sync',(req,res)=>{
+    models.sequelize.sync().then(()=>{
+        res.send('synchoronizing code with database completed!');
+    })
+});
+var shirtsController=require('./controllers/shirtsController');
 app.get('/',(req,res)=>{
-    res.render('home',{title:"Ushi - Thời trang của bạn"});
+    shirtsController.getAll((shirts)=>{
+        res.render('home',{title:"Ushi - Thời trang của bạn",shirts});
+    });            
 });
 
 //Set sever port & Start sever

@@ -24,6 +24,9 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-    "express-handlebars-paginate": "^1.0.3"
+    "express-handlebars-paginate": "^1.0.3",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.10"
   }
 }

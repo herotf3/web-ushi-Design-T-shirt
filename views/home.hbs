@@ -42,78 +42,20 @@
       <div class="row mx-auto my-4">
         <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
           <div class="carousel-inner w-100" role="listbox">
-            <div class="carousel-item active">
+            {{#each shirts}}
+            <div class="carousel-item{{#unless @index}} active {{/unless}}">
               <div class="d-block col-3 img-fluid">
-                <div class="shirt shirt-1 wow animated animated4 fadeInLeft">
+                <div class="shirt wow animated animated4 fadeInLeft" style='background-image: url("{{img_url}}")'>
                   <div class="shirt-hover">
-                    <h2>Toxicity</h2>
+                    <h2>{{name}}</h2>
                     <hr />
-                    <h4 class="price">120,000đ</h4>
+                    <h4 class="price">{{price}}đ</h4>
                     <a href="#" class="ushi-btn-primary">Xem</a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="carousel-item">
-              <div class="d-block col-3 img-fluid">
-                <div class="shirt shirt-2 wow animated animated4 fadeInLeft">
-                  <div class="shirt-hover">
-                    <h2>Drinkout</h2>
-                    <hr />
-                    <h4 class="price">150,000đ</h4>
-                    <a href="single/single-shirt.html" class="ushi-btn-primary">Xem</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="d-block col-3 img-fluid">
-                <div class="shirt shirt-3 wow animated animated4 fadeInLeft">
-                  <div class="shirt-hover">
-                    <h2>Dady Proud</h2>
-                    <hr />
-                    <h4 class="price">220,000đ</h4>
-                    <a href="single/single-shirt.html" class="ushi-btn-primary">Xem</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="d-block col-3 img-fluid">
-                <div class="shirt shirt-4 wow animated animated4 fadeInLeft">
-                  <div class="shirt-hover">
-                    <h2>Lovely cat</h2>
-                    <hr />
-                    <h4 class="price">120,000đ</h4>
-                    <a href="single/single-shirt.html" class="ushi-btn-primary">Xem</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="d-block col-3 img-fluid">
-                <div class="shirt shirt-5 wow animated animated4 fadeInLeft">
-                  <div class="shirt-hover">
-                    <h2>Proud</h2>
-                    <hr />
-                    <h4 class="price">155,000đ</h4>
-                    <a href="single/single-shirt.html" class="ushi-btn-primary">Xem</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="d-block col-3 img-fluid">
-                <div class="shirt shirt-6 wow animated animated4 fadeInLeft">
-                  <div class="shirt-hover">
-                    <h2>Bahama</h2>
-                    <hr />
-                    <h4 class="price">220,000đ</h4>
-                    <a href="single/single-shirt.html" class="ushi-btn-primary">Xem</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {{/each}}            
           </div>
           <div class="carousel-hot-control">
             <a id="prev-hot" class="carousel-control-prev " href="#recipeCarousel" role="button" data-slide="prev">

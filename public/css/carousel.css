@@ -45,7 +45,7 @@
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
   background-color: rgba(19, 0, 44, 0.788);
-  padding: 30% 30px !important;
+  padding: 25% 30px !important;
 }
 .shirt-hover hr {
   height: 25px;
