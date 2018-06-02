@@ -2,12 +2,13 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {      
-      return queryInterface.bulkInsert('Categories', [{
+    var categories=[
+      {
         name: 'All',
-        description:'all shirts here!',
-        createdAt: Sequelize.literal('NOW()'),
-        updatedAt: Sequelize.literal('NOW()')
-      }], {});    
+        description:'all shirts here!'
+      }    
+    ];
+      return queryInterface.bulkInsert('Categories', categories, {});    
   },
 
   down: (queryInterface, Sequelize) => {

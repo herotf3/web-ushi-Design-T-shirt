@@ -1,0 +1,176 @@
+    <!-- dialog box on click Buy-->
+    <!-- Modal -->
+    <div class="modal fade" id="modalOrder" tabindex="-1" role="dialog" aria-labelledby="modalCenter" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title color-second" id="modalLongTitle">Đặt mua</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="">
+                    <div class="modal-body">
+                        <table class="precheckout_items_table">
+                            <thead class="precheckout_items_table_head">
+                                <tr>
+                                    <th class="line_items_table_heading heading-image"></th>
+                                    <th class="line_items_table_heading">Lượng</th>
+                                    <th class="line_items_table_heading">Size</th>
+                                    <th class="line_items_table_heading">Kiểu</th>
+                                    <th class="line_items_table_heading heading-price">Giá</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="precheckout_items_table_row" data-index="3">
+                                    <td class="item_table item-image">
+                                        <img class="display--desktop item-small-img" src="https://vangogh.teespring.com/v3/image/y_ZmeVBXRNNxjeC5qZO6Dui2I1U/120/560.jpg"
+                                            loaded="loaded">
+                                    </td>
+                                    <td class="item_table item-qty">
+                                        <div class="">
+                                            <input class="form_textfield form_textfield-full" name="pre_checkout_form[line_items_attributes][0][quantity]" value="1"
+                                                type="text">
+                                        </div>
+                                    </td>
+                                    <td class="item_table ">
+                                        <div class="">
+                                            <select class="form_select_menu item-size" name="pre_checkout_form[line_items_attributes][0][size]" data-product-id="212"
+                                                data-color-id="5819" style="display: inline-block;">
+                                                <option value="--">--</option>
+                                                <option value="S" data-usd-price="48.0" data-usd-price-with-tax="48.0" data-gbp-price="34.06" data-gbp-price-with-tax="34.06"
+                                                    data-eur-price="39.11" data-eur-price-with-tax="39.11" data-aud-price="62.41"
+                                                    data-aud-price-with-tax="62.41" data-cad-price="61.29" data-cad-price-with-tax="61.29">S</option>
+                                                <option value="M" data-usd-price="48.0" data-usd-price-with-tax="48.0" data-gbp-price="34.06" data-gbp-price-with-tax="34.06"
+                                                    data-eur-price="39.11" data-eur-price-with-tax="39.11" data-aud-price="62.41"
+                                                    data-aud-price-with-tax="62.41" data-cad-price="61.29" data-cad-price-with-tax="61.29">M</option>
+                                                <option value="L" data-usd-price="48.0" data-usd-price-with-tax="48.0" data-gbp-price="34.06" data-gbp-price-with-tax="34.06"
+                                                    data-eur-price="39.11" data-eur-price-with-tax="39.11" data-aud-price="62.41"
+                                                    data-aud-price-with-tax="62.41" data-cad-price="61.29" data-cad-price-with-tax="61.29">L</option>
+                                                <option value="XL" data-usd-price="48.0" data-usd-price-with-tax="48.0" data-gbp-price="34.06" data-gbp-price-with-tax="34.06"
+                                                    data-eur-price="39.11" data-eur-price-with-tax="39.11" data-aud-price="62.41"
+                                                    data-aud-price-with-tax="62.41" data-cad-price="61.29" data-cad-price-with-tax="61.29">XL</option>
+                                                <option value="2XL" data-usd-price="50.0" data-usd-price-with-tax="50.0" data-gbp-price="35.47" data-gbp-price-with-tax="35.47"
+                                                    data-eur-price="40.74" data-eur-price-with-tax="40.74" data-aud-price="65.01"
+                                                    data-aud-price-with-tax="65.01" data-cad-price="63.84" data-cad-price-with-tax="63.84">2XL</option>
+                                                <option value="3XL" data-usd-price="50.0" data-usd-price-with-tax="50.0" data-gbp-price="35.47" data-gbp-price-with-tax="35.47"
+                                                    data-eur-price="40.74" data-eur-price-with-tax="40.74" data-aud-price="65.01"
+                                                    data-aud-price-with-tax="65.01" data-cad-price="63.84" data-cad-price-with-tax="63.84">3XL</option>
+                                                <option disabled="disabled" data-usd-price="50.0" data-usd-price-with-tax="50.0" data-gbp-price="35.47" data-gbp-price-with-tax="35.47"
+                                                    data-eur-price="40.74" data-eur-price-with-tax="40.74" data-aud-price="65.01"
+                                                    data-aud-price-with-tax="65.01" data-cad-price="63.84" data-cad-price-with-tax="63.84">4XL</option>
+                                                <option disabled="disabled" data-usd-price="50.0" data-usd-price-with-tax="50.0" data-gbp-price="35.47" data-gbp-price-with-tax="35.47"
+                                                    data-eur-price="40.74" data-eur-price-with-tax="40.74" data-aud-price="65.01"
+                                                    data-aud-price-with-tax="65.01" data-cad-price="63.84" data-cad-price-with-tax="63.84">5XL</option>
+                                                <option disabled="disabled" data-usd-price="57.0" data-usd-price-with-tax="57.0" data-gbp-price="40.44" data-gbp-price-with-tax="40.44"
+                                                    data-eur-price="46.44" data-eur-price-with-tax="46.44" data-aud-price="74.11"
+                                                    data-aud-price-with-tax="74.11" data-cad-price="72.78" data-cad-price-with-tax="72.78">LT</option>
+                                                <option disabled="disabled" data-usd-price="57.0" data-usd-price-with-tax="57.0" data-gbp-price="40.44" data-gbp-price-with-tax="40.44"
+                                                    data-eur-price="46.44" data-eur-price-with-tax="46.44" data-aud-price="74.11"
+                                                    data-aud-price-with-tax="74.11" data-cad-price="72.78" data-cad-price-with-tax="72.78">XLT</option>
+                                                <option disabled="disabled" data-usd-price="57.0" data-usd-price-with-tax="57.0" data-gbp-price="40.44" data-gbp-price-with-tax="40.44"
+                                                    data-eur-price="46.44" data-eur-price-with-tax="46.44" data-aud-price="74.11"
+                                                    data-aud-price-with-tax="74.11" data-cad-price="72.78" data-cad-price-with-tax="72.78">2XLT</option>
+                                                <option disabled="disabled" data-usd-price="57.0" data-usd-price-with-tax="57.0" data-gbp-price="40.44" data-gbp-price-with-tax="40.44"
+                                                    data-eur-price="46.44" data-eur-price-with-tax="46.44" data-aud-price="74.11"
+                                                    data-aud-price-with-tax="74.11" data-cad-price="72.78" data-cad-price-with-tax="72.78">3XLT</option>
+                                                <option disabled="disabled" data-usd-price="57.0" data-usd-price-with-tax="57.0" data-gbp-price="40.44" data-gbp-price-with-tax="40.44"
+                                                    data-eur-price="46.44" data-eur-price-with-tax="46.44" data-aud-price="74.11"
+                                                    data-aud-price-with-tax="74.11" data-cad-price="72.78" data-cad-price-with-tax="72.78">4XLT</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td class="item_table item-style">
+                                        <select class="form_select_menu" name="pre_checkout_form[line_items_attributes][0][style]">
+                                            <optgroup label="Premium Tee">
+                                                <option data-color-id="6513" data-product-id="369" value="369-6513">Premium Tee - Black</option>
+                                                <option data-color-id="6514" data-product-id="369" value="369-6514">Premium Tee - New Navy</option>
+                                                <option data-color-id="6529" data-product-id="369" value="369-6529">Premium Tee - Heathered Charcoal </option>
+                                            </optgroup>
+                                            <optgroup label="Gildan 8oz Heavy Blend Hoodie">
+                                                <option data-color-id="5819" data-product-id="212" value="212-5819">Gildan 8oz Heavy Blend Hoodie - Black</option>
+                                            </optgroup>
+                                        </select>
+                                    </td>
+                                    <td class="item_table item-price">
+                                        <span>120,000</span>
+                                        <a class="item_remove_button">Bỏ</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button name="add_to_cart" type="submit" value="true" class="btn btn-success btn-square ml-0 px-3 py-2">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Thêm vào giỏ hàng</button>
+                        <div class="checkout-payment">
+                            <button type="submit" name="btn_check_out" value="checkout" class="btn link-arrow-after"> Tới trang thanh toán</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">       
+        <div class="page-path">
+            <li class="item">Trang chủ
+                <i class="fa fa-chevron-right"></i>
+            </li>
+            <li class="item">Shop</li>
+        </div>
+        <!--Display shirt & buy -->
+        <div class="row mx-auto viewing-container py-4">
+            <div class="col-2 shirt shirt-behind">
+                <div id="behind" class="shirt shirt-7-behind img-rounded-box"></div>
+                <div id="pattern" class="shirt shirt-7-pattern img-rounded-box"></div>
+            </div>
+            <div id="main-view" class="col-6 shirt">
+                <div id="main-img" class="shirt shirt-7 img-rounded-box main-view"></div>
+            </div>
+            <!--Buying zone -->
+            <div class="col-4 buying-zone">
+                <div class="heading-shirt-name pt-4 pl-3">
+                    <h3 class="shirt-name">
+                        {{detail.Design.name}}
+                    </h3>
+                    <p class="author">From
+                        <span>Thien Tran</span>
+                    </p>
+                    <p class="description">{{detail.Design.description}}</p>
+                    <div class="shirt-option-container">
+                        <h6>Loại áo hiện có:</h5>
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option selected>Tay ngắn - 120,000đ</option>
+                                <option value="1">Tay dài - 180,000đ</option>
+                                <option value="2">Hoodies - 250,000đ</option>
+                            </select>
+                            <div class="list-size">
+                                <span class="size size-s circle-numbering bg-white ">S</span>
+                                <span class="size size-m circle-numbering bg-white ">M</span>
+                                <span class="size size-xl circle-numbering bg-white ">XL</span>
+                                <span class="size size-l circle-numbering bg-white ">L</span>
+                            </div>
+                            <div class="product-color-container">
+                                <div class="label-color">Màu:</div>
+                                <ul id="color_list" class="product-color-list" data-shirtid='0'>
+                                    <li class="product-color-item product-color-item-active" data-color='0'>
+                                        <div class="product-color-block" style="background-color:#222222;"></div>
+                                    </li>
+                                    <li class="product-color-item" data-color='1'>
+                                        <div class="product-color-block" style="background-color:#0C1A2C;"></div>
+                                    </li>
+                                    <li class="product-color-item" data-color='2'>
+                                        <div class="product-color-block" style="background-color:#413c42;"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+                    <button data-toggle="modal" data-target="#modalOrder" class="buy-now btn">Đặt mua ngay</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>

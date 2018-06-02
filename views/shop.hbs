@@ -1,0 +1,158 @@
+<div class="container-fluid">
+    <div class="head-image shop-head-image">
+        <div class="head-page-content">
+            <h2 class="title-page py-auto">Cửa hàng</h2>
+            <p class="describe-page">Thoả thích lựa chọn các mẫu thiết kế, tùy chỉnh theo ý bạn và mua sắm</p>
+        </div>
+    </div>
+    <div class="page-path">
+        <li class="item">Trang chủ
+            <i class="fa fa-chevron-right"></i>
+        </li>
+        <li class="item">Shop</li>
+    </div>
+    <div class="page-content row">
+        <div class="col-3 pr-3 category-aside">
+            <div class="site_search_container">
+                <form class="ushi_search_form" style="padding: 10px 0;" action=".">
+                    <div class="input-group">
+                        <input type="text" id="search" class="site-search-input" style="width: 60%;" placeholder="Bạn đang nghĩ gì?">
+                        <div class="input-group-append">
+                            <button class="btn ushi-btn-primary" type="button">Tìm kiếm</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <h5 class="text-dark">
+                <strong>Danh mục</strong>
+            </h5>
+            <ul class="list-categories">
+                <li class="category active">
+                    <a href="">Tất cả</a>
+                </li>
+                {{#each categories}}
+                <li class="category">
+                    <a href="shop/{{id}}">{{name}}</a>
+                </li>
+                {{/each}}
+                
+                <li class="category-hot">
+                    <a href=""> >> BỘ SƯU TẬP HOT</a>
+                </li>
+            </ul>
+            <!--color-->
+            <h5 class="text-dark">
+                <strong>Màu sắc</strong>
+            </h5>
+            <div class="menu-colors menu-item">
+                <ul class="color-row1">
+                    <a href="">
+                        <li class="color-circle" style="background:#1068f7"></li>
+                    </a>
+                    <a href="">
+                        <li class="color-circle" style="background:#330085"></li>
+                    </a>
+                    <a href="">
+                        <li class="color-circle" style="background:#00d8cd"></li>
+                    </a>
+                    <a href="">
+                        <li class="color-circle" style="background:#239e18"></li>
+                    </a>
+                    <a href="">
+                        <li class="color-circle" style="background:#004c63"></li>
+                    </a>
+                </ul>
+                <ul class="color-row2">
+                    <a href="">
+                        <li class="color-circle" style="background:#ec0202"></li>
+                    </a>
+                    <a href="">
+                        <li class="color-circle" style="background:#d6b600"></li>
+                    </a>
+                    <a href="">
+                        <li class="color-circle" style="background:#ecff46"></li>
+                    </a>
+                    <a href="">
+                        <li class="color-circle" style="background:#979797"></li>
+                    </a>
+                    <a href="">
+                        <li class="color-circle" style="background:#252525"></li>
+                    </a>
+                </ul>
+            </div>
+            <h5 class="text-dark">
+                <strong>Mức giá</strong>
+            </h5>
+            <div class="price-filter-container">
+                <div class="price-lable">
+                    <b class="min-price"> 50,000đ</b>
+                    <b class="max-price"> 500,000đ</b>
+                    </br>
+                </div>
+
+                <input id="price-filter" type="text" class="span2" value="" data-slider-min="50000" data-slider-max="500000" data-slider-step="10000"
+                    data-slider-value="[100000,300000]" />
+                <div class="text-center">
+                    <span id="price-range">
+                        <span>100000đ</span> đến
+                        <span>300000đ</span>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-9">
+            <div class="items">
+                <div class="items">
+                    {{#each shirts}}
+                    <div data-price="{{price}}" class="item">
+                        <div class="shirt" style='background-image: url("{{img_url}}");'>
+                            <div class="shirt-hover shop-item-hover">
+                                <a href="shop/xem?shirtId={{id}}" class="ushi-btn-primary">Mua</a>
+                                <a href="">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h3>{{Design.name}}</h3>
+                            <h5>{{price}}đ</h5>
+                        </div>
+                    </div>
+                    {{/each}}                    
+                </div>
+
+                <nav aria-label="Page navigation justify-content-center">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+    <!-- end container fuild -->
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+<script src="js/range-picker.js"></script>

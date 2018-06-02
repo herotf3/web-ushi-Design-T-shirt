@@ -27,12 +27,19 @@ app.get('/sync',(req,res)=>{
         res.send('synchoronizing code with database completed!');
     })
 });
+
 var shirtsController=require('./controllers/shirtsController');
 app.get('/',(req,res)=>{
-    shirtsController.getAll((shirts)=>{
+    shirtsController.getFeatures((shirts)=>{
         res.render('home',{title:"Ushi - Thời trang của bạn",shirts});
     });            
 });
+//routing module
+var shirts=require('./routes/shop');
+app.use('/shop',shirts);
+
+
+
 
 //Set sever port & Start sever
 app.set('port',process.env.PORT || 5000);
