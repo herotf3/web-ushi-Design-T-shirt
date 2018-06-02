@@ -1,1 +1,2 @@
-# web-ushi-Design-T-shirt
+# Ushi
+A modern T-shirt eshop
