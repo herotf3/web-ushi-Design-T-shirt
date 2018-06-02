@@ -1,0 +1,75 @@
+<!--Template for rows of a order modal in detail page
+    Data={        
+        styles : styles,
+        styleId: selecting.data('styleid'),
+        shirtId: shirtId,
+        colorHex: color,                
+        designId: "{{detail.id}}",
+        price: price,
+        img: url,
+        Qty: 1, //default
+        removeable: false        
+    }
+-->
+<tr id="item-1" class="precheckout_items_table_row" data-styleid="{{styleId}}">
+    <td class="item_table item-image">
+        <img id="item-img" class="display--desktop item-small-img" src="{{img}}" loaded="loaded">
+    </td>
+    <td class="item_table item-qty">
+        <div class="">
+            <input class="Qty form_textfield form_textfield-full" name="pre_checkout_form[line_items_attributes][0][quantity]" value="{{Qty}}"
+                type="number" min='0' max='100'>
+        </div>
+    </td>
+    <td class="item_table ">
+        <div class="">
+            <select class="size form_select_menu item-size" name="pre_checkout_form[line_items_attributes][0][size]" data-product-id="212"
+                data-color-id="5819" style="display: inline-block;">
+                <option value="S" >S</option>
+                <option value="M" 
+                    >M</option>
+                <option value="L" 
+                    >L</option>
+                <option value="XL" 
+                    >XL</option>
+                <option value="2XL" >2XL</option>
+                <option value="3XL" >3XL</option>
+                <option disabled="disabled" >4XL</option>
+                <option disabled="disabled" >5XL</option>
+                <option disabled="disabled" data-usd-price="57.0" data-usd-price-with-tax="57.0" data-gbp-price="40.44" data-gbp-price-with-tax="40.44"
+                    data-eur-price="46.44" data-eur-price-with-tax="46.44" data-aud-price="74.11" data-aud-price-with-tax="74.11"
+                    data-cad-price="72.78" data-cad-price-with-tax="72.78">LT</option>
+            </select>
+        </div>
+    </td>
+    <td class="item_table item-style">
+        <select id="styles" class="style form_select_menu" name="pre_checkout_form[line_items_attributes][0][style]">            
+            {{#each styles}}
+            <option value="{{styleId}}" data-img="{{img}}" data-price={{price}} data-shirtid="{{shirtId}}"
+            data-colorhex="{{colorHex}}" data-styleid="{{styleId}}">{{styleName}}</option>
+            {{/each}}
+        </select>
+    </td>
+    <td id="item-price" class="item_table item-price" data-price="{{price}}">
+        <span>{{price}}đ</span>
+        {{#if removeable}}
+        <a class="item_remove_button">Bỏ</a>
+        {{/if}}
+    </td>
+</tr>
+
+<script>
+    $(document).ready(function(){
+        var selecting=$('#item-1');
+        $(selecting).find('#styles').val("{{styleId}}");
+
+        //pick other style from dropdown list
+        $(selecting).find('#styles').change(function(){
+            var selectedStyle=$('#styles').find(':selected');
+            console.log($(selectedStyle).data());
+            $('#item-img').attr('src',$(selectedStyle).data('img'));                        
+            $('#item-price span').text(selectedStyle.data('price')+"đ");
+        })
+
+    });
+</script>

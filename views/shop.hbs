@@ -27,7 +27,7 @@
                 <strong>Danh mục</strong>
             </h5>
             <ul class="list-categories">
-                <li class="category active">
+                <li id="test" class="category active" data-categories="{{categories}}">
                     <a href="">Tất cả</a>
                 </li>
                 {{#each categories}}
@@ -108,7 +108,7 @@
                     <div data-price="{{price}}" class="item">
                         <div class="shirt" style='background-image: url("{{img_url}}");'>
                             <div class="shirt-hover shop-item-hover">
-                                <a href="shop/xem?shirtId={{id}}" class="ushi-btn-primary">Mua</a>
+                                <a href="shop/xem?designId={{Design.id}}" class="ushi-btn-primary">Mua</a>
                                 <a href="">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
@@ -156,3 +156,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
 <script src="js/range-picker.js"></script>
+<script>
+    $(document).ready(function(){
+        console.log($('#test').data('categories'));
+        console.log(JSON.stringify($('#test').data('categories')));
+    });
+</script>

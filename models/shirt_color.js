@@ -1,6 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Shirt_Color = sequelize.define('Shirt_Color', {    
+  var Shirt_Color = sequelize.define('Shirt_Color', {   
+    style_name: DataTypes.STRING, 
     img_front: DataTypes.STRING,
     img_back: DataTypes.STRING
   }, {freezeTableName: true, timestamps:false});

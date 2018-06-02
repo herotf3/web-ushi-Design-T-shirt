@@ -14,7 +14,9 @@
                       <a class="nav-link" href="/shop">Shop</a>
                   </li>
                   <li class="nav-item px-2 cart-menu">
-                      <a class="nav-link" href="../shop/cart.html">Giỏ hàng</a>
+                      <a class="nav-link" href="/cart">
+                      <i id="cart-icon" class="fa fa-shopping-cart" aria-hidden="true">{{#if session.cart}}<span class="badge badge-pill badge-danger shopping-cart-total">{{session.cart.totalQty}} </span>{{/if}}</i> 
+                      </a>
                   </li>
                   <li class="nav-item px-2 my-auto">
                       <a class="nav-link " href="#" id="signin" data-toggle="modal" data-target="#signUpModal">Đăng kí </a>

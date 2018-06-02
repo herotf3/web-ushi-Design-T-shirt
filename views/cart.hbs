@@ -1,0 +1,128 @@
+<div class="container-fluid">
+    <!--Cart list item-->
+    <div class="row pt-5 pl-3 mb-5">
+        <div class="col-lg-8 col-md-9 col-sm-12 order-list-container ">
+            <div class="ushi-heading pl-4 cart-title">
+                <h3 class="color-second">Giỏ hàng của bạn</h3>
+            </div>
+            <div>
+                {{#each Items}}
+                <div class="cart_item" id="{{styleId}}-{{size}}">
+                    <div class="cart-line">
+                        <div class="cart-line-top">
+                            <div class="cart-line-thumbnail">
+                                <a>
+                                    <img src="{{img}}" alt="dead1" class="pull-left">
+                                </a>
+                            </div>
+                            <div class="cart-line-detail">
+                                <div class="cart-product-name">{{shirtName}}</div>
+                                <div class="cart-product-detail"><span class="cart-product-detail_size">{{size}}</span> - {{styleName}} </div>
+                            </div>
+                            <div class="cart-line-quantity "><span class="cart-product-detail_qty">{{Qty}}</span>x</div>
+                            <div class="cart-line-price">
+                                <span>{{moneyFormat price}}đ</span>
+                            </div>
+                            <div class="cart-line-action pl-3">
+                                <button class="btn cart-btn" onclick="editItem('{{styleId}}-{{size}}')">
+                                    <i class="fa fa-pencil color-white" aria-hidden="true"></i>
+                                </button>
+                                <button class="btn btn-danger" onclick="deleteItem('{{styleId}}-{{size}}')">X</button>
+                            </div>
+                        </div>
+                        <div id="edit-{{styleId}}-{{size}}" class="cart-line__edit cf " data-size="{{size}}" data-qty="{{Qty}}">
+                            <div class="triangle"></div>
+                            <div class="cart-line__save">
+                                <button class="cart__save btn-success" onclick="onSaveEdit('{{styleId}}-{{size}}')">Save</button>
+                            </div>
+                            <div class="cart-line__edit--right">
+                                <div class="cart-line__size">
+                                    <div class="cart-line__size--label">Size: </div>
+                                    <div class="cart-line__size--select">
+                                        <select class="form__select_menu js-size-select">
+                                            <option value="S">S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="2XL">2XL</option>
+                                            <option value="3XL">3XL</option>
+                                            <option disabled="disabled">4XL</option>
+                                            <option disabled="disabled">5XL</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="cart-line__qty">
+                                    <div class="cart-line__qty--label">Qty: </div>
+                                    <input class="cart-line__qty--input form__textfield js-qty-line-item" type="number" min="0" max="999" pos="0" value="3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-10 pl-4 ml-2 cart-total">
+            <h4 class="heading-total">Tổng cộng
+                <span>(<span id="total-shirt">{{totalQty}}</span> áo)</span>
+            </h4>
+            <h3 class="color-primary pl-4" id="total-price"> {{moneyFormat totalPrice}}đ</h3>
+            <button class="btn btn-success w-100">Thanh toán &rarr;</button>
+        </div>
+    </div>
+
+</div>
+<script>    
+
+    $(document).ready(function () {
+        $('.cart-line__edit').hide();
+    });
+
+    function deleteItem(itemId) {
+        $('#' + itemId).remove();
+
+        $.ajax({
+            url: '/cart/delete-item?id=' + itemId,
+            method: 'GET',
+            success: function (res) {
+                $('.shopping-cart-total').text(res.totalQty);
+                $('#total-shirt').text(res.totalQty);
+                $('#total-price').text(res.totalPrice);
+            }
+        });
+    }
+
+    function editItem(itemId) {
+        //show the edit element
+        var cartEditor = $('#edit-' + itemId);
+        cartEditor.toggle(500, () => { });    //show / hide w animation
+        var size = $(cartEditor).data('size');
+        var qty = $(cartEditor).data('qty');
+        cartEditor.find('select').val(size);
+        cartEditor.find('input').val(qty);
+    }
+
+    function onSaveEdit(itemId) {
+        var cartEditor = $('#edit-' + itemId);
+        var oSize = $(cartEditor).data('size');
+        var oQty = $(cartEditor).data('qty');
+        var nSize=cartEditor.find('select').val();
+        var nQty=cartEditor.find('input').val();
+        if (oSize !=nSize  || oQty !=nQty ) {
+            //user really change
+            //call api to change session cart            
+            $.ajax({
+                url: '/cart/edit-item?id=' + itemId + '&size=' + nSize + '&qty=' + nQty.toString(),
+                method: 'GET',
+                success: function (res) {                    
+                    var cartEditor = $('#edit-' + itemId);
+                    cartEditor.toggle(500, () => { });    //show / hide w animation
+                    location.reload(true);
+                }
+            });
+        }
+    }
+
+
+</script>

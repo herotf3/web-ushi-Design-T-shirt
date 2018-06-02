@@ -283,7 +283,7 @@ span.icon-search-container {
     height: 30vh;
 }
 .logo-footer {
-	background: url("../logo-footer.png");
+	background: url("/img/logo-footer.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 50%;
@@ -317,6 +317,7 @@ span.icon-search-container {
     display: block;
 }
 .product-color-container{
+    display:none;
     zoom:1;
     padding-bottom:0.933rem;
 }
@@ -601,4 +602,35 @@ a.item_remove_button{
 }             
 .orderDetailTotal{
     float: right;
+}
+/*stack :hide all, show 1*/
+.img-stack{
+    display:none;    
+}
+.img-stack.show{
+    display: block;
+}
+
+.btn-sticky{
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+}
+.round-image-btn{
+    border-radius: 50%;
+    font-size:20px;
+    width: 100px;
+    height: 100px;  
+    color: #fff;    
+}
+.fa.fa-shopping-cart{
+    font-size: 24px;
+    position: relative;
+}
+
+.fa .shopping-cart-total{
+    position: absolute;;
+    bottom:-10px;
+    right: -55%;
+    font-size:12px;
 }

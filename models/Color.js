@@ -8,6 +8,9 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: true,
         len:[0,6]
       }
+    },
+    name:{
+      type: DataTypes.STRING
     }
   }, {timestamps:false});
 

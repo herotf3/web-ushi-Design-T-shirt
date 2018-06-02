@@ -194,14 +194,14 @@
     margin: 0 auto;
     perspective:2000px ;
     transform: translateY(0);
-    transition: transform .4s ease;
+    transition: transform .5s ease;
 }
 .new-editor{
     text-align: left;
-    width: 530px;
-    height: 630px;
+    width: inherit;
+    height: inherit;
     background: #fff;
-    transition: transform .4s ease;
+    transition: transform .5s ease;
     box-sizing: content-box;
     position: absolute;
     -webkit-backface-visibility: hidden;
@@ -213,8 +213,8 @@
 .flip-container{
     position: absolute;
     width: 530px;
-    height: 630px;    
-    transition: transform .6s;
+    height: 630px;   
+    transition: transform .5s;
     transform-style: preserve-3d;
 }
 .flip-container.flip .front{

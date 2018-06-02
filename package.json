@@ -22,9 +22,13 @@
   "homepage": "https://github.com/herotf3/web-ushi-Design-T-shirt#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "connect-pg-simple": "^4.2.1",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "express-handlebars-paginate": "^1.0.3",
+    "express-session": "^1.15.6",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.37.10"

@@ -283,7 +283,7 @@ span.icon-search-container {
     height: 30vh;
 }
 .logo-footer {
-	background: url("../logo-footer.png");
+	background: url("/img/logo-footer.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 50%;

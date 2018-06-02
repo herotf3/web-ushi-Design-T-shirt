@@ -24,12 +24,25 @@ controller.findById=(id,callback)=>{
     models.Shirt
     .findOne({
         where: {id: id},
-        include: [{model: models.Design}]
+        include: [{
+            model: models.Design,
+            include: [models.User]
+        }]
     })
     .then((result)=>{
         callback(result);
     })
 };
 
+ controller.getShirt_Color=(id,callback)=>{
+    models.Shirt_Color
+    .findOne({
+        where: {id:id},
+        include :[{model: models.Shirt, attributes:["price"]}]
+    })
+    .then((result)=>{
+        callback(result);
+    });
+}; 
 //---
 module.exports=controller;
