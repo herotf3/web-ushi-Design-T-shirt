@@ -33,9 +33,17 @@ app.route('/login')
 .get((req, res) => res.render('login'))
 .post(Passport.authenticate('local', {failureRedirect: '/', successRedirect:'/private'}))
 
-app.route('/singup')
-.get((req, res)=> res.render('login'))
-.post(signUpFunc());
+app.post('/signup', (req, res) =>{
+    var username = req.body.username;
+    var password = req.body.password1;
+    var obj = {usr: username, pwd: password}
+    var json = JSON.stringify(obj)
+    fs.readFile('./userDB.json', (err, data) => {
+        const db = JSON.parse(data)
+        db.push(obj)
+        console.log(db)
+    })
+})
 
 app.get('/private', (req, res)=> {
     if(req.isAuthenticated() ){
@@ -46,12 +54,6 @@ app.get('/private', (req, res)=> {
 })
 
 app.get('/loginOK', (req, res) => res.send("Bạn đã đăng nhập thành công!"))
-
-signUpFunc = (username, password) => {
-    var obj = {id: username+password, usr: username, pwd: password}
-    var json = JSON.stringify(obj)
-    fs.writeFile('./userDB.json', json, 'utf8', callback);
-}
 
 // Passport
 Passport.use(new LocalStrategy(
