@@ -19,31 +19,31 @@
 
 <body>
   <div class="container-fluid">
-      <header class="bg-white">
-          <nav class="navbar navbar-expand-sm bg-nav navbar-light font-weight-bold pl-3">
-              <a class="navbar-brand" href="#">
-                  <img id="logo" src="../img/logo ushi.png" alt="Ushi - Thời trang của bạn">
-              </a>
-              <ul class="navbar-nav ml-auto mr-2">
-                  <li class="nav-item px-2">
-                      <a class="nav-link" href="../home/index.html">Trang chủ</a>
-                  </li>
-                  <li class="nav-item px-2">
-                      <a class="nav-link" href="../design-page/design.html">Trang thiết kế</a>
-                  </li>
-                  <li class="nav-item px-2">
-                      <a class="nav-link" href="../shop/myshop.html">Shop</a>
-                  </li>
-                  <li class="nav-item px-2 cart-menu">
-                      <a class="nav-link" href="../shop/cart.html">Giỏ hàng</a>
-                  </li>
-                  <li class="nav-item px-2 my-auto">
-                      <a class="nav-link " href="#" id="signin" data-toggle="modal" data-target="#signUpModal">Đăng kí </a>
-                  </li>
-                  <li class="nav-item px-2 my-auto">
-                      <a class="nav-link" href="#" id="login" data-toggle="modal" data-target="#logInModal">Đăng nhập </a>
-                  </li>
-                  <li class="nav-item px-2 user-menu">
+    <header class="bg-white">
+      <nav class="navbar navbar-expand-sm bg-nav navbar-light font-weight-bold pl-3">
+        <a class="navbar-brand" href="#">
+          <img id="logo" src="../img/logo ushi.png" alt="Ushi - Thời trang của bạn">
+        </a>
+        <ul class="navbar-nav ml-auto mr-2">
+          <li class="nav-item px-2">
+            <a class="nav-link" href="../home/index.html">Trang chủ</a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="../design-page/design.html">Trang thiết kế</a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="../shop/myshop.html">Shop</a>
+          </li>
+          <li class="nav-item px-2 cart-menu">
+            <a class="nav-link" href="../shop/cart.html">Giỏ hàng</a>
+          </li>
+          <li class="nav-item px-2 my-auto">
+            <a class="nav-link " href="#" id="signin" data-toggle="modal" data-target="#signUpModal">Đăng kí </a>
+          </li>
+          <li class="nav-item px-2 my-auto">
+            <a class="nav-link" href="#" id="login" data-toggle="modal" data-target="#logInModal">Đăng nhập </a>
+          </li>
+          <!-- <li class="nav-item px-2 user-menu">
                       <div class="dropdown">
                           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                               aria-expanded="false">
@@ -62,11 +62,11 @@
                               <a class="dropdown-item" href="#">Đăng xuất</a>
                           </div>
                       </div>
-                  </li>
+                  </li> -->
 
-              </ul>
-          </nav>
-      </header>
+        </ul>
+      </nav>
+    </header>
     <!-- Big banner-->
     <div class="homepage_banner_container">
       <div class="content_banner_container">
@@ -307,7 +307,7 @@
     <!--End container & body -->
   </div>
 
-  <!-- signUpModal -->
+  <!-- loginModal -->
   <div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document" style="width: 350px">
       <div class="modal-content">
@@ -327,16 +327,16 @@
           <hr>
           <form>
             <div class="form-group">
-              <input name="" class="form-control" placeholder="Địa chỉ email" type="email">
+              <input name="username" class="form-control" placeholder="Địa chỉ email" type="email">
             </div>
             <!-- form-group// -->
             <div class="form-group">
-              <input class="form-control" placeholder="Mật khẩu" type="password">
+              <input name="password" class="form-control" placeholder="Mật khẩu" type="password">
             </div>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <button type="submit" class="btn btn-primary btn-block"> Đăng nhập </button>
+                  <button type="submit" value="Login" class="btn btn-primary btn-block"> Đăng nhập </button>
                 </div>
                 <!-- form-group// -->
               </div>
@@ -346,13 +346,13 @@
                 </a>
               </div>
             </div>
-
+          </form>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- logInModal -->
+  <!-- signupModal -->
   <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document" style="width: 350px">
       <div class="modal-content">
@@ -377,6 +377,7 @@
             <div class="form-group">
               <button type="submit" class="btn btn-primary btn-block"> Đăng ký </button>
             </div>
+          </form>
         </div>
       </div>
     </div>

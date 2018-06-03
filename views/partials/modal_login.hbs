@@ -1,4 +1,4 @@
-<!-- signUpModal -->
+<!-- loginModal -->
 <div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document" style="width: 350px">
         <div class="modal-content">
@@ -16,13 +16,13 @@
                         <i class="fab fa-facebook-f"></i>  Đăng nhập bằng facebook</a>
                 </p>
                 <hr>
-                <form>
+                <form class="" action="/login" method="post">
                     <div class="form-group">
-                        <input name="" class="form-control" placeholder="Địa chỉ email" type="email">
+                        <input name="username" class="form-control" placeholder="Địa chỉ email" type="email">
                     </div>
                     <!-- form-group// -->
                     <div class="form-group">
-                        <input class="form-control" placeholder="Mật khẩu" type="password">
+                        <input name="password" class="form-control" placeholder="Mật khẩu" type="password">
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -43,7 +43,7 @@
     </div>
 </div>
 
-<!-- logInModal -->
+<!-- singupModal -->
 <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document" style="width: 350px">
         <div class="modal-content">
@@ -54,16 +54,16 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form class="" action="/signup" method="post">
                     <div class="form-group">
-                        <input name="" class="form-control" placeholder="Địa chỉ email" type="email">
+                        <input name="username" class="form-control" placeholder="Địa chỉ email" type="email">
                     </div>
                     <!-- form-group// -->
                     <div class="form-group">
-                        <input class="form-control" placeholder="Mật khẩu" type="password">
+                        <input name="password1" class="form-control" placeholder="Mật khẩu" type="password">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Xác nhận mật khẩu" type="password">
+                        <input name="password2" class="form-control" placeholder="Xác nhận mật khẩu" type="password">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-block"> Đăng ký </button>
