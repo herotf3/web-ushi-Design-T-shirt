@@ -39,9 +39,18 @@ app.post('/signup', (req, res) =>{
     var obj = {usr: username, pwd: password}
     var json = JSON.stringify(obj)
     fs.readFile('./userDB.json', (err, data) => {
-        const db = JSON.parse(data)
+        if(err) {
+            return console.log(err)
+        }        
+        var db = JSON.parse(data.toString())
         db.push(obj)
-        console.log(db)
+        fs.writeFile('./userDB.json', JSON.stringify(db), (err, result)=>{
+            if(err) {
+                return console.log(err)
+            } else {
+                console.log(result+ "ok")
+            }
+        })
     })
 })
 
