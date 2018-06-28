@@ -2,8 +2,7 @@
 module.exports=(sequelize,DataTypes)=>{
     var TypeShirt=sequelize.define('TypeShirt',{
         name:{
-            type: DataTypes.STRING,
-            len: [2,100]
+            type: DataTypes.STRING
         },
         blank_front: DataTypes.STRING,  //url of front img &
         blank_back: DataTypes.STRING,   //back img

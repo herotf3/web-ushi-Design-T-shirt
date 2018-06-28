@@ -30,8 +30,8 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 //body parser
 var bodyParser = require('body-parser');
-app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 //session
 var pgSession=require('connect-pg-simple')(session);
@@ -57,17 +57,9 @@ app.get('/sync', (req, res) => {
 
 app.use((req,res,next)=>{
     res.locals.session=req.session; 
+    req.session.login=req.isAuthenticated();
     next();
 });
-
-var shirtsController = require('./controllers/shirtsController');
-app.get('/', (req, res) => {
-    shirtsController.getFeatures((shirts) => {
-        res.render('home', { title: "Ushi - Thời trang của bạn", shirts });
-    });
-});
-
-
 
 //loging
 var Passport=require('passport');
@@ -79,7 +71,7 @@ app.use(Passport.session());
 
 app.route('/login')
 .get((req, res) => res.render('login'))
-.post(Passport.authenticate('local', {failureRedirect: '/', successRedirect:'/private'}))
+.post(Passport.authenticate('local', {failureRedirect: '/private', successRedirect:'/'}))
 
 app.post('/signup', (req, res) =>{
     var username = req.body.username;
@@ -98,15 +90,16 @@ app.post('/signup', (req, res) =>{
             } else {
                 console.log(result+ "ok")
             }
-        })
-    })
+        });
+    });
+    res.render('signup');
 })
 
 app.get('/private', (req, res)=> {
     if(req.isAuthenticated() ){
         res.send('Welcome to my page');
     } else {
-        res.send('Bạn chưa đăng nhập');
+        res.send('Đăng nhập thất bại');
     }
 })
 
@@ -144,6 +137,13 @@ Passport.deserializeUser((name, done) => {
 })
 
 //routing module
+var shirtsController = require('./controllers/shirtsController');
+app.get('/', (req, res) => {
+    shirtsController.getFeatures((shirts) => {
+        res.render('home', { title: "Ushi - Thời trang của bạn", shirts ,login: req.isAuthenticated()});
+    });
+});
+
 var shop = require('./routes/shop');
 app.use('/shop', shop);
 
@@ -151,6 +151,13 @@ app.use('/shop', shop);
 var cartRoute=require('./routes/cart');
 app.use("/cart",cartRoute);
 
+//Design page
+var design=require('./routes/design');
+app.use("/design",design);
+
+//upload routes
+var uploadRoute=require('./routes/upload');
+app.use("/upload",uploadRoute);
 
 //Set sever port & Start sever
 app.set('port', process.env.PORT || 5000);

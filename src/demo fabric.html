@@ -1,30 +1,99 @@
 <html>
-    <head>
-        <title>Fabric tutorial</title>
-        <script src="js/fabric.js"></script>
-    </head>
-    <body>
-        <canvas id="cv" width="800" height="600"></canvas>
-    </body>
 
-    <script>
-        var canvas= new fabric.Canvas('cv');
-        var rect=new fabric.Rect({
-            left:100,
-            top:100,
-            width:80,
-            height:60,
-            fill:'orange',
-            opacity:0.5
+<head>
+    <title>Fabric tutorial</title>
+    <script src="js/fabric.js"></script>
+</head>
+
+<body>
+    <input type="button" value="deleteCVObj" onclick="deleteSelectedObj()">
+    <input type="button" value="addCVObj" onclick="addCVObj()">
+    <input type="button" value="addImg" onclick="addImg()">
+    <br>
+    <input type="button" value="toJSON" onclick="toJSON()">
+    <input type="button" value="loadfromJson" onclick="loadJSON()">
+    <input type="button" value="capture" onclick="capture('product-shirt')">
+    <div id="json-from-canvas"></div>
+    <div>
+        <div id="product-shirt" class="list_type-shirts" style="position:relative; width: 100px; height: 100px;">
+            <div class="product-color" style="background-color: #ff1b98; position: absolute; width: 100px; height: 100px;"></div>
+            <img id="img2" width="100px" height="100px" src="./img/black shirt/white-blank.png" style="position: absolute;">
+            <h2 style="position: absolute;">Shirt type + Product color</h2>
+        </div>
+    </div>
+
+    <canvas id="cv" width="400" height="400" style="float:left ;border: #ff1b98 1px solid; float: left;"></canvas>
+    <canvas id="cv2" style="float:right; border: #ff1b98 1px solid; float: left;"></canvas>
+
+
+</body>
+
+<script src="./js/html2canvas.min.js"></script>
+<script>
+    var canvas = new fabric.Canvas('cv');
+    var canvas2 = new fabric.Canvas('cv2');
+    var canvasMerge;
+    //add image from url
+
+    var rect = new fabric.Rect({
+        left: 100,
+        top: 100,
+        width: 80,
+        height: 60,
+        fill: 'orange',
+        opacity: 0.5
+    });
+    canvas.add(rect);
+
+    function capture(id) {
+        html2canvas(document.getElementById(id)).then(function (canvas) {
+            document.body.appendChild(canvas);
         });
-        canvas.add(rect);
-    </script>
-    <script>
-        var count=0, i=101;
-        while (i>0){                     
-            i-=6;
-            count++;
-        }
-        console.log(count);
-    </script>
+    }
+
+    function deleteSelectedObj() {
+        canvas.remove(canvas.getActiveObject());
+    }
+    function addCVObj() {
+        rect.clone((clone) => {
+            canvas.add(clone);
+        });
+    }
+
+    function addImg() {
+        fabric.Image.fromURL('./img/logo ushi.png', (img) => {
+            img.selectable = false;
+            img.hoverCursor = "cursor";
+            img.top = 0;
+            img.left = 0;
+            canvas.add(img);
+        });
+    }
+    function addImgE(id) {
+        var imgE = document.getElementById(id);
+        console.log(imgE);
+        var img = new fabric.Image(imgE, {
+            top: 100, left: 100, opacity: 1, width: 100, height: 100
+        });
+        canvas.add(img);
+    }
+    function toJSON() {
+        var divJson = document.getElementById("json-from-canvas");
+        var json = JSON.stringify(canvas);
+
+        divJson.innerText = json;
+    }
+    function loadJSON() {
+        // var json=document.getElementById("json-from-canvas").innerText;
+        // console.log(json);
+        // canvas2.loadFromJSON(json);
+        canvas.forEachObject(function (obj) {
+            canvas2.add(obj);
+        });
+    }
+</script>
+<script>
+
+</script>
+
 </html>

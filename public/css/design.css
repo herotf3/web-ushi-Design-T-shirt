@@ -123,6 +123,7 @@
     background-color: rgb(243, 245, 246);
     border: 1px solid rgb(195, 195, 195);
     border-radius: 5px;
+    padding: 20px;
 }
 
 .kieu-dang {
@@ -280,8 +281,8 @@ div.printable-area-box {
 	left: 28.9%;
 	top: 100px;
 	width: 41.3%;
-	height: 360px;
-	border-color: rgba(255, 100, 185, 0.534) !important;
+	height: 400px;
+	border-color: rgba(255, 100, 185, 0.3) !important;
 }
 div.printable-area-box {
 	margin-top: -2px;
@@ -300,12 +301,12 @@ div.printable-area-box, div.printable-area-toolbar {
 }
 div.printable-area-toolbar {
 	font-size: .7em;
-	width: calc(100% + 4px);	
+	width: calc(100%);	
 	bottom: -2em;
-	background-color: rgba(255, 100, 185, 0.692);
+	background-color: rgba(255, 100, 185, 0.3);
 	height: 2em;
     line-height: 2em;
-    padding-left: 5px;
+    padding-left: 4px;
 }
 /*input color*/
 .form-control{
@@ -315,4 +316,42 @@ div.printable-area-toolbar {
 }
 .form-control.select-color{
     width: 30px;
+}
+.product-info:last-child {
+    border: 0 none;
+    margin-bottom: 0;
+}
+.product-info {
+    border-bottom: 1px dotted #f1f1f1;
+    float: left;
+    margin-bottom: 8px;
+    width: 100%;
+}
+#product-attributes .form-group {
+    margin-bottom: 8px;
+}
+.form-group.product-fields {
+    margin-bottom: 8px;
+}
+
+.product-fields {
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+#product-attributes .list-number {
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.list-number li .size-number {
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    clear: both;
+    display: block;
+    height: 26px;
+    padding: 0 5px;
+    text-align: center;
+    width: 33px;
 }

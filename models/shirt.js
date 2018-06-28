@@ -2,11 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   var Shirt = sequelize.define('Shirt', {    
     price: {
-      type: DataTypes.INTEGER,
-      validate :{
-        notEmpty: true,
-        min: 1000
-      }
+      type: DataTypes.INTEGER
     },
     img_url: DataTypes.STRING,  //img represent for design+type of Shirt
     isFeature: DataTypes.BOOLEAN

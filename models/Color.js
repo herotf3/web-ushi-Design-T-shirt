@@ -3,11 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   var Color = sequelize.define('Color', {    
     colorHex: {
       type: DataTypes.STRING,
-      primaryKey: true,
-      validate :{
-        notEmpty: true,
-        len:[0,6]
-      }
+      primaryKey: true
     },
     name:{
       type: DataTypes.STRING

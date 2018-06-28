@@ -1,0 +1,357 @@
+<link rel="stylesheet" href="/css/design.css">
+<div id="wrapper">
+    <div id="layout-left">
+        <div id="left-content">
+            <div id="tag">
+                <button class="button-layout-left btn-left-left" id="chu" onclick="chu()">Chữ</button>
+                <button class="button-layout-left btn-left-right btn-choose" id="mau" onclick="mau()">Mẫu</button>
+            </div>
+            <div id="left-content-content">
+                <div id="content-chu" class="d-none">
+                    <div class="form-group">
+                        <label for="chu">Điền chữ vào bên dưới</label>
+                        <input type="text" class="form-control" id="chu" style="width: 95%" placeholder="Nhập vào chữ">
+                    </div>
+                    <div class="form-inline">
+                        <label for="phong-chu">Chọn phông chữ</label>
+                        <select id="phong-chu" class="form-control select-color" style="width: 80%">
+                            <option value="Helvetica">Helvetica</option>
+                            <option value="abc">abc</option>
+                        </select>
+                        <input type="color" class="form-control select-color" value="#ff0000">
+                    </div>
+                    <div class="form-inline">
+                        <label for="them-vien">Thêm viền</label>
+                        <select id="them-vien" class="form-control select-color" style="width: 80%">
+                            <option value="khong-vien">Không viền</option>
+                            <option value="vien-tren">Viền trên</option>
+                        </select>
+                        <input type="color" class="form-control select-color">
+                    </div>
+                </div>
+                <div id="content-mau">
+                    <input type="file" onchange="upload(event)" class="form-control-file color-danger"></input>
+                    <p class="pt-3">HOẶC</p>
+                    <button class="btn btn-mau color-second">Duyệt để tìm mẫu
+                        <u></u>
+                    </button>
+                </div>
+
+                <script>
+                    function chu() {
+                        document.getElementById('content-chu').className = '';
+                        document.getElementById('content-mau').className = 'd-none';
+                        document.getElementById('chu').className = 'button-layout-left btn-left-left btn-choose'
+                        document.getElementById('mau').className = 'button-layout-left btn-left-right'
+
+                    }
+                    function mau() {
+                        document.getElementById('content-chu').className = 'd-none';
+                        document.getElementById('content-mau').className = '';
+                        document.getElementById('chu').className = 'button-layout-left btn-left-left'
+                        document.getElementById('mau').className = 'button-layout-left btn-left-right  btn-choose'
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <div id="layout-center">
+        <div class="editor-container">
+            <div id="flip-container" class="flip-container">
+                <div id="design-view" class="new-editor front">
+
+                    <div class="productColor" data-element="productColorEl" data-currentcolor="#fff" style="background-color: rgb(255, 255, 255);"></div>
+                    <img id="img-blank_front" class='ghost-image' src="/img/type-shirt/product_type_1_front.png" alt="blank shirt!">
+                    <div class="printable-area-box">
+                        <div class="printable-area-toolbar">Printable area</div>
+                    </div>
+                    <canvas id="canvas-design_front" class="canvas-design" width="220px" height="400px" style=" margin: 100px 0 0 153px;"></canvas>
+                    <div class="flip-buttons">
+                        <button class='flip-button flip-button-front flip-button-active no-select'>Trước</button>
+                        <button class='flip-button flip-button-back'>Sau</button>
+                    </div>
+                </div>
+                <div class="new-editor back">
+                    <div class="productColor" data-element="productColorEl" data-currentcolor="#fff" style="background-color: rgb(255, 255, 255);"></div>
+                    <img id="img-blank_back" class='ghost-image' src="/img/type-shirt/product_type_1_back.png" alt="blank shirt!">
+                    <div class="printable-area-box" style="top:60px">
+                        <div class="printable-area-toolbar">Printable area</div>
+                    </div>
+                    <canvas id="canvas-design_back" class="canvas-design" width="220px" height="400px" style=" margin: 60px 0 0 152px;"></canvas>
+                    <div class="flip-buttons">
+                        <button class='flip-button flip-button-front'>Trước</button>
+                        <button class='flip-button flip-button-back flip-button-active no-select'>Sau</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div id="layout-right">
+        <div class="right-left">
+            <div class="right-left-content color-sample">
+                <a>
+                    <div class="box-color" style="background:#fff" data-color="#fff"></div>
+                </a>
+                <a>
+                    <div class="box-color" style="background:#0050b2" data-color="#0050b2"></div>
+                </a>
+                <a>
+                    <div class="box-color" style="background:#c90013" data-color="#c90013"></div>
+                </a>
+                <a>
+                    <div class="box-color" style="background:#1a1a1a" data-color="#1a1a1a"></div>
+                </a>
+                <a>
+                    <div class="box-color" style="background:#f2b3bb" data-color="#f2b3bb"></div>
+                </a>
+                <a>
+                    <div class="box-color" style="background:#9700bd" data-color="#9700bd"></div>
+                </a>
+                <a>
+                    <div class="box-color" style="background:#ecdd00" data-color="#ecdd00"></div>
+                </a>
+            </div>
+        </div>
+        <div class="right-right">
+            <div class="right-right-content">
+                <div class="form-group style-selector">
+                    <label for="style-selector">
+                        <b>Kiểu dáng &amp; thiết kế</b>
+                    </label>
+                    <select name="type-shirt" id="style-selector" class="form-control">
+                        {{#each typeShirts}}
+                        <option value="{{id}}" data-img_front="{{blank_front}}" data-img_back="{{blank_back}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <form method="POST" id="tool_cart" name="tool_cart" action="">
+                    <div class="product-info" id="product-attributes">
+                        <div class="form-group product-fields">
+                            <label for="fields">Size</label>
+                            <div class="dg-poduct-fields">
+                                <style>
+                                    .product-quantity {
+                                        display: none;
+                                    }
+                                </style>
+                                <ul class="p-color-sizes list-number col-md-12">
+                                    <li>
+                                        <label>S</label>
+                                        <input id="size1" type="number" class="form-control input-sm size-number" name="S">
+                                    </li>
+                                    <li>
+                                        <label>M</label>
+                                        <input id="size2" type="number" class="form-control input-sm size-number" name="M">
+                                    </li>
+                                    <li>
+                                        <label>L</label>
+                                        <input id="size3" type="number" class="form-control input-sm size-number" name="L">
+                                    </li>
+                                    <li>
+                                        <label>XL</label>
+                                        <input id="size4" type="number" class="form-control input-sm size-number" name="XL">
+                                    </li>
+                                    <li>
+                                        <label>XXL</label>
+                                        <input id="size5" type="number" class="form-control input-sm size-number" name="XXL">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group product-fields product-quantity">
+                            <label class="col-sm-4">Số lượng</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control input-sm" value="1" data-count="1" name="quantity" id="quantity">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input id="design-name" type="text" placeholder="Đặt tên áo" class="form-control p-2">
+                        </div>
+                        <div class="form-group product-fields">
+                            <span class="help-block">
+                                <small>Số lượng bán nhỏ nhất: 1</small>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+                <div class="price">
+                    <p>Giá ước tính</p>
+                    <h1 id="design-price">100,000</h1>đ
+                </div>
+                <div class="btn-right">
+                    <button id="btn-print" class="btn-right-content btn btn-primary ">Đặt in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/design.js"></script>
+<script src="js/fabric.js"></script>
+<script src="js/html2canvas.js"></script>
+<script>
+    var canvasFront;
+    var canvasBack;
+
+    var designPrice = 100000;
+    var selectedStyle = "1";  //default
+    var colorProduct = "ffffff";
+    $(document).ready(function () {
+        $('#style-selector').val('1');
+        //------------------
+        canvasFront = new fabric.Canvas('canvas-design_front');
+        canvasBack = new fabric.Canvas('canvas-design_back');
+    });
+
+
+
+
+    $('#style-selector').change(function () {
+        var selectedType = $(this).find(':selected');
+        var frontURL = selectedType.data('img_front');
+        var backURL = selectedType.data('img_back');
+        $('#img-blank_front').attr('src', frontURL);
+        $('#img-blank_back').attr('src', backURL);
+        selectedStyle = selectedType.val();   //typeId
+    });
+
+    var formatter = new Intl.NumberFormat();
+    function changePrice(d) {
+        designPrice += d;
+        $('#design-price').text(formatter.format(designPrice));
+    }
+
+    function upload(e) {
+        var fileType = e.target.files[0].type;
+        var url = URL.createObjectURL(e.target.files[0]);
+        //get current canvas that user is viewing (front/back)
+        var canvas = getCurrentCanvas();
+
+        console.log(JSON.stringify(canvas));
+        console.log(url);
+        console.log(fileType);
+        if (fileType === 'image/png' || fileType === 'image/jpeg' || fileType === 'image/jpg') { //check if png
+            console.log('go in png');
+            changePrice(80000);
+            fabric.Image.fromURL(url, function (img) {
+                img.set({
+                    scaleX: 0.5,
+                    scaleY: 0.5
+                });
+                canvas.add(img);
+            });
+        } else if (fileType === 'image/svg+xml') { //check if svg
+            console.log('go in svg');
+            changePrice(85000);
+            fabric.loadSVGFromURL(url, function (objects, options) {
+                var svg = fabric.util.groupSVGElements(objects, options);
+                svg.scaleToWidth(180);
+                svg.scaleToHeight(180);
+                canvas.add(svg);
+            });
+        }
+    }
+
+    function getCurrentCanvas() {
+        if ($('#flip-container').hasClass('flip')) {
+            return canvasBack;
+        }
+        return canvasFront;
+    }
+
+    //listen on delete key press
+    $(document).keydown(function (e) {
+        if (e.which == 46) {
+            // delete pressed
+            var canvas = getCurrentCanvas();
+            console.log(canvas.getActiveObject());
+            canvas.remove(canvas.getActiveObject());
+            changePrice(-40000);
+        }
+
+
+    });
+    //--------------action flip and pick color
+    var oldColor = '#fff';
+    var productColor = $('.productColor');
+    function changeColor() {
+        var color = $(this).data('color');    //láy màu từ box-color hiện tại
+        oldColor = productColor.data('currentcolor');
+        //thay đổi màu đổ lên áo
+        productColor.css('background-color', color);
+        productColor.data('currentcolor', color);
+    }
+    function changeColorClick() {
+        var color = $(this).data('color');    //láy màu từ box-color hiện tại
+        oldColor = color;     //khi hover ra thì vẫn giữ màu này
+        //thay đổi màu đổ lên áo
+        productColor.css('background-color', color);
+        colorProduct = color;
+        colorProduct = colorProduct.substr(1, 6);
+        console.log(colorProduct);
+    }
+    function undoColor() {
+        productColor.css('background-color', oldColor);
+        console.log("set background: " + oldColor);
+        productColor.data('currentcolor', oldColor);
+        console.log("set current color: " + oldColor);
+    }
+    $('.color-sample div.box-color').mouseenter(changeColor)
+        .mouseleave(undoColor);
+    $('.color-sample div.box-color').click(changeColorClick);
+    //button front / back click to flip the editor
+    $('.flip-button').click(function () {
+        $('.flip-container').toggleClass('flip');
+    });
+
+    //-----------
+    function toggleDesignTool() {
+        $('.printable-area-box').toggle();
+        $('.flip-buttons').toggle();
+    }
+    //Go Print order
+    $('#btn-print').click(function () {
+        //get design canvas in JSON
+        var patternFront = JSON.stringify(canvasFront);
+        var patternFront = JSON.stringify(canvasBack);
+        
+        //hide tool
+        toggleDesignTool();
+        //capture the design product =producstyle+ color + design canvas
+        html2canvas(document.getElementById('design-view')).then(function (canvasShirt_front) {
+            //after capture front design, capture back design
+            $('#flip-container').toggleClass('flip');   //flip to back view            
+            //capture back
+            html2canvas(document.getElementById('design-view')).then(function (canvasShirt_back) {
+                $('#flip-container').toggleClass('flip');   //flip to front again                     
+                //call server save to database
+                
+                $.ajax({
+                    url: 'design/save-user-design',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        shirtFront: canvasShirt_front.toDataURL(),
+                        shirtBack: canvasShirt_back.toDataURL(),
+                        userDesign: {                            
+                            pattern_front: JSON.stringify(canvasFront),
+                            pattern_back: JSON.stringify(canvasBack),
+                            colorProduct: colorProduct,
+                            typeShirt: selectedStyle,
+                            price: designPrice,
+                            designName: $('#design-name').val()
+                        }
+                    }),
+                    success: function(res){
+                        console.log(res);
+                        window.location=res.gotoURL;
+                    }
+                });
+            });
+                            
+        });
+
+    });
+</script>

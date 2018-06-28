@@ -2,8 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   var Category = sequelize.define('Category', {
     name: {
-      type: DataTypes.STRING,
-      len:[2,120]    
+      type: DataTypes.STRING
     },
     description:{
       type: DataTypes.STRING,

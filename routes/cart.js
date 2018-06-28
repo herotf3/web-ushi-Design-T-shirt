@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
         totalQty = sessionCart.totalQty;
         //load the         
     }
-    res.render("cart", { title: "Giỏ hàng", Items: items, totalQty: totalQty, totalPrice: totalPrice });
+    res.render("cart", { title: "Giỏ hàng", Items: items, totalQty: totalQty, totalPrice: totalPrice ,login: req.isAuthenticated()});
 });
 
 router.post('/add-to-cart', (req, res) => {
@@ -31,13 +31,13 @@ router.post('/add-to-cart', (req, res) => {
     //get item Shirt_color by id
     cart.add(item);    
     req.session.cart = cart;  //save cart to session
-    res.send(cart);
+    res.send({cart: cart,login: req.isAuthenticated()});
 });
 
 router.get('/delete-item',(req,res)=>{
     var itemId=req.query.id;
     if (!itemId){
-        res.status(400).send({message: "Invalid action!"});
+        res.status(400).send({message: "Invalid action!",login: req.isAuthenticated()});
         return;
     }
     var cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -45,7 +45,7 @@ router.get('/delete-item',(req,res)=>{
     req.session.cart=cart;
 
 
-    res.send({totalQty: cart.totalQty, totalPrice: formater.format(cart.totalPrice)+"đ" });
+    res.send({totalQty: cart.totalQty, totalPrice: formater.format(cart.totalPrice)+"đ" ,login: req.isAuthenticated()});
 });
 //edit in cart page
 router.get('/edit-item',(req,res)=>{
@@ -61,6 +61,6 @@ router.get('/edit-item',(req,res)=>{
     var cart = new Cart(req.session.cart ? req.session.cart : {});
     cart.edit(itemId,newQty,newSize);
     req.session.cart=cart;
-    res.send({totalQty: cart.totalQty, totalPrice: formater.format(cart.totalPrice)+"đ" });        
+    res.send({totalQty: cart.totalQty, totalPrice: formater.format(cart.totalPrice)+"đ" ,login: req.isAuthenticated()});        
 });
 module.exports = router;
